@@ -27,3 +27,5 @@ config/environments/*.local.yml
 .DS_Store
 /.idea
 .byebug_history
+
+/app/views/layouts/test.html.erb

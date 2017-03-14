@@ -1,3 +1,25 @@
 en:
   hello: "Hello world"
   res: Restaurant
+  brand: Awesomecity
+  home:
+    home: Home
+    menu: Menu
+    combo: Combo
+    book: Booking
+    contact: Contact
+    cart: See Cart
+  footer:
+    about: About the house
+    about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+     sed diam nonummy nibh euismod tincidunt ut laoreet.
+      Dolore magna aliquam erat volutpat ipsum.
+    contact: Contact Detail
+    contact_content1: 123 Delicious Street, San Francisco, CA 10110
+    contact_content2: 010-020-0780
+    contact_content3: hello@company.com
+    open: Opening Hours
+    open_content1: Monday - Firday
+    open_content2: 11:00 AM - 10:00 PM
+    open_content3: Saturday - Sunday
+    open_content4: 10:00 AM - 09:00 PM
