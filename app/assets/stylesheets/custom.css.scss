@@ -1,0 +1,263 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.footer {
+  background-image: url("http://hotelselfoss.is/wp-content/uploads/2015/12/E-Riverside-Restaurant.jpg");
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 0px;
+}
+
+.animated {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.feature-thumb {
+  background: url("https://goo.gl/Tno2uj");
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
+
+.animated.faded{
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  animation-name: fading, bounce;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fading {
+  from, to {
+    color: orangered;
+  }
+  50% {
+    color:darkslategrey;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 15%, 40%, 60%, to {
+    -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  30%, 43% {
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  30%, 43%, 60% {
+    -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+  }
+  60% {
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes bounce {
+  0%, 8%, 22%, 32%, to {
+    -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  16%, 18% {
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  16%, 18%, 28% {
+    -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+  }
+  28% {
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  35% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+.nav.navbar-nav.navbar-right li a:hover {
+  color: #05bba5;
+}
+#brand {
+  font-family: Ubuntu;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+#top{
+  height:100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(0.4px);
+  -moz-filter: blur(0.4px);
+  -o-filter: blur(0.4px);
+  -ms-filter: blur(0.4px);
+  filter: blur(0.4px);
+  background-position: center center;
+  animation-name: fadeInDown;
+  animation-duration: 1.5s;
+}
+
+#top2 {
+  height:100vh;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: rgba(137, 120, 120, 0.73);
+  background: rgba(246, 229, 209, 0.82);
+  z-index: 2;
+}
+
+.navbar {
+  margin-bottom: 1px;
+  box-shadow: 0px 4px 6px #8f8f81;
+  position: fixed;
+  width: 100%;
+}
+
+.fit {
+  max-width: 100%;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+
+img.actived {
+  display: block;
+}
+img.inactived {
+  display: none;
+}
+
+@-webkit-keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    color: orangered;
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+    color: orangered;
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+    color: orangered;
+  }
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+  to {
+    color: orangered;
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}@keyframes bounceIn {
+   0%, 20%, 40%, 60%, 80%, to {
+     color: orangered;
+     -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+     animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+   }
+   0% {
+     color: orangered;
+     opacity: 0;
+     -webkit-transform: scale3d(.3, .3, .3);
+     transform: scale3d(.3, .3, .3);
+   }
+   20% {
+     -webkit-transform: scale3d(1.1, 1.1, 1.1);
+     transform: scale3d(1.1, 1.1, 1.1);
+   }
+   40% {
+     color: orangered;
+     -webkit-transform: scale3d(.9, .9, .9);
+     transform: scale3d(.9, .9, .9);
+   }
+   60% {
+     opacity: 1;
+     -webkit-transform: scale3d(1.03, 1.03, 1.03);
+     transform: scale3d(1.03, 1.03, 1.03);
+   }
+   80% {
+     -webkit-transform: scale3d(.97, .97, .97);
+     transform: scale3d(.97, .97, .97);
+   }
+   to {
+     color: orangered;
+     opacity: 1;
+     -webkit-transform: scaleX(1);
+     transform: scaleX(1);
+   }
+ }
+#brand:hover {
+  --webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-animation-duration: 1.75s;
+  animation-duration: 1.75s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
