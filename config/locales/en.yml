@@ -9,6 +9,23 @@ en:
     book: Booking
     contact: Contact
     cart: See Cart
+    admin: Admin Only
+  admin:
+    menu: Menu
+    category: Category
+    dish: Dish
+    order: Check Order
+    bill: Export bill
+    profile: Profile
+    setting: Setting
+    logout: Log out
+    login: Login (only for Admin)
+    error_log: Please log in
+    error_wrongpass: Wrong password or email
+    email: Input email
+    pass: Input password
+    admin: Admin
+    not_exist: This account is not exist.
   footer:
     about: About the house
     about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -23,3 +40,10 @@ en:
     open_content2: 11:00 AM - 10:00 PM
     open_content3: Saturday - Sunday
     open_content4: 10:00 AM - 09:00 PM
+  form:
+    login: This form contain %{count}
+    error: error
+    errors: errors
+    _error: This form contain
+    button: Login
+    lost_pass: Lost your password?

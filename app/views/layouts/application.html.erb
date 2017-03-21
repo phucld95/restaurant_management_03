@@ -21,7 +21,11 @@
           "data-wow-delay": "0.3s", method: :get %>
       </div>
       <div class="collapse navbar-collapse">
-        <%= render "layouts/menu_guest" %>
+        <% if logged_in? %>
+          <%= render "layouts/menu_admin" %>
+        <% else %>
+          <%= render "layouts/menu_guest" %>
+        <% end %>
       </div>
     </div>
   </div>

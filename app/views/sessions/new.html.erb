@@ -1,0 +1,22 @@
+<section id="login" class="parallax-section section-box">
+  <div class="login-form">
+    <h1><%= t "admin.login" %></h1>
+    <div class="flash-notice">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+    </div>
+    <%= form_for :session, url: login_path do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control form-group",
+        placeholder: t("admin.email") %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control form-group",
+        placeholder: t("admin.pass") %>
+      <%= link_to t("form.lost_pass"), "#", class: "link" %>
+      <%= f.submit t("form.button"), class: "btn btn-primary log-btn" %>
+    <% end %>
+  </div>
+</section>
