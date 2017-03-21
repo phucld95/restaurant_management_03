@@ -10,10 +10,11 @@
   <li><%= link_to t("admin.bill"), "#bill", class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.7s", method: :get %></li>
   <li class="dpdwn">
-    <%= link_to t("admin.profile"), "#", class: "smoothScroll animated fadeInLeft wow",
+    <%= link_to t("admin.profile"), admin_path,
+      class: "smoothScroll animated fadeInLeft wow",
       "data-wow-delay": "0.75s", method: :get %>
     <ul class="nav">
-      <li><%= link_to t("admin.setting"), "#setting", class: "smoothScroll animated fadeIn wow",
+      <li><%= link_to t("admin.setting"), edit_admin_path, class: "smoothScroll animated fadeIn wow",
         "data-wow-delay": "0.15s", method: :get %></li>
       <li><%= link_to t("admin.logout"), logout_path, class: "smoothScroll animated fadeIn wow",
         "data-wow-delay": "0.2s", method: :delete %></li>

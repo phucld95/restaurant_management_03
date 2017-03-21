@@ -151,8 +151,8 @@
   width: 100%;
   height: 100%;
   display: block;
-  color: rgba(137, 120, 120, 0.73);
-  background: rgba(246, 229, 209, 0.82);
+  color: rgba(180, 160, 160, 0.3);
+  background: rgba(246, 229, 209, 0.3);
   z-index: 2;
 }
 
@@ -251,6 +251,7 @@ img.inactived {
      transform: scaleX(1);
    }
  }
+
 #brand:hover {
   --webkit-animation-name: bounceIn;
   animation-name: bounceIn;
@@ -313,8 +314,8 @@ img.inactived {
 }
 
 .login-form {
-  width: 550px;
-  padding: 40px 30px;
+  width: 500px;
+  padding: 20px 15px;
   background: rgba(251, 251, 255, 0.86);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -323,7 +324,7 @@ img.inactived {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 52%;
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -332,7 +333,7 @@ img.inactived {
 
 .form-group {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .form-control {
@@ -362,6 +363,10 @@ img.inactived {
   border-radius: 4px;
 }
 
+#btn-submit:hover {
+  background: #22be5c;
+}
+
 .link {
   text-decoration: none;
   color: #32c6a1;
@@ -383,13 +388,87 @@ img.inactived {
 
 .error, .alert, .notice, .info, .danger {
   border: 1px solid rgba(188, 114, 113, 0.66);
-  background: rgba(243, 129, 142, 0.39);
+  background: rgba(255, 134, 147, 0.65);
   padding: 8px;
-  margin-bottom:1em;
-  color: rgba(255, 79, 66, 0.91);
+  color: rgba(155, 34, 45, 0.93);
+  border-radius: 5px;
 }
 
 .success {
-  color: #00d861;
-  margin-bottom: 1em;
+  background: rgba(36, 255, 109, 0.75);
+  color: #0ba73e;
+  border-radius: 5px;
+}
+
+#admin_show {
+  height: 100vh;
+  background: url("http://i.imgur.com/brRS1Vl.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(0.4px);
+  -moz-filter: blur(0.4px);
+  -o-filter: blur(0.4px);
+  -ms-filter: blur(0.4px);
+  filter: blur(0.4px);
+  background-position: center center;
+  animation-name: fadeInDown;
+  animation-duration: 1.5s;
+}
+
+.profile {
+  background: rgba(137, 222, 200, 0.76);
+  color: white;
+  font-size: 20px;
+  padding: 20px 30px 20px 30px;
+  margin: 20px 20px 40px 20px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 11%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.edit_pass {
+  border: 1px solid #2d97a7;
+  background: rgba(54, 178, 194, 0.71);
+  padding: 5px 20px 5px 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+#editpass:hover {
+  border: 1px solid #2a8797;
+  background: rgba(54, 178, 194, 0.91);
+}
+
+.flash-notice {
+  width: 550px;
+  padding: 20px 15px 20px 15px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 22%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.edit_pass_content_show {
+  display: block;
+}
+
+.edit_pass_content_hide {
+  display: none;
 }
