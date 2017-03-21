@@ -16,18 +16,18 @@
       <div class="sidebar-right">
         <div class="info-panel">
           <div class="info-dish">
-            <div class="info_main">
-              <span class="info_name"><%= @dish.name %></span>
-              <div class="info_price heading size-xxl">
+            <div class="info-main">
+              <span class="info-name"><%= @dish.name %></span>
+              <div class="info-price heading size-xxl">
                 <b class="t-currency">
                   <span class="icon">$</span><%= @dish.price %>
                 </b>
               </div>
             </div>
-            <div class="info_support">
+            <div class="info-support">
               <%= @dish.description %>
             </div>
-            <div class="info_support">
+            <div class="info-support">
               <% if @dish.isAvailable? %>
                 <div class="check">
                   <span class="fa-stack fa-lg fa-fw">

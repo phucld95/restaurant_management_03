@@ -13,11 +13,11 @@
       <%= f.email_field :email, class: "form-control form-group",
         value: @current_admin.email, placeholder: t("admin.email") %>
 
-      <div id="editpass" class="edit_pass">
+      <div id="editpass" class="edit-pass">
         <%= t "admin.change_pass" %>
       </div>
 
-      <div id="edit_pass_show" class="edit_pass_content_hide">
+      <div id="edit_pass_show" class="edit-pass-content-hide">
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control form-group",
           placeholder: t("admin.newpass") %>
