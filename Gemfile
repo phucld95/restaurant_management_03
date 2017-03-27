@@ -11,6 +11,15 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bcrypt"
+gem "jquery-ui-rails"
+gem "config"
+gem "faker"
+gem "kaminari"
+gem "ransack"
+gem "bootstrap-kaminari-views"
+gem "social-share-button"
+gem "will_paginate"
+gem "owlcarousel-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri
