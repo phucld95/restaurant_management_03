@@ -8,6 +8,7 @@ class DishesController < ApplicationController
   end
 
   def show
+    @order_dish = current_order.order_dishes.new
   end
 
   private

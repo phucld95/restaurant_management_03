@@ -1,0 +1,19 @@
+<% if @order_dish.present? && @order_dish.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @order_dish.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% unless @order_dishes.any? %>
+  <p class="text-center">
+    <%= link_to t("order.empty_item"), dishes_path%>
+  </p>
+<% else %>
+  <% @order_dishes.each do |order_dish| %>
+    <%= render "orders/cart_row", dish: order_dish.dish,
+      order_dish: order_dish, show_total: true %>
+  <% end %>
+<% end %>

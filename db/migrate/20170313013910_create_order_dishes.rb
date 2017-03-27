@@ -5,7 +5,8 @@ class CreateOrderDishes < ActiveRecord::Migration[5.0]
       t.references :dish, foreign_key: true
       t.integer :discount
       t.integer :quantity
-
+      t.integer :price
+      t.integer :total_price
       t.timestamps
     end
   end

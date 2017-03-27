@@ -8,7 +8,6 @@ en:
     combo: Combo
     book: Booking
     contact: Contact
-    cart: See Cart
     admin: Admin Only
   admin:
     menu: Menu
@@ -187,6 +186,7 @@ en:
       buy: Book Now
       notavai: See you soon
       social: Awesomecity
+      add_to_cart: Add to card
     dish:
       money: $
       submit: Add to cart
@@ -219,3 +219,15 @@ en:
       readmore: Read More
       off: " off"
       deal: View Deal
+  order:
+    empty_item: "There are no items in your shopping cart.  Please go menu and add some items to your cart."
+    delete: Delete
+    delete_alert: ! "Are you sure you wish to delete the product %{product_name} from your cart?"
+    unit_price: "Unit price  :"
+    update_quantity: Update Quantity
+    total_price: "Total price :"
+    quantity: "Quantity:"
+    cart_text: "%{cart_size} dishes in cart ( %{total_price}$ )"
+    not_valid_or_not_active: "is not valid or is not active."
+    not_valid_value: "is not a valid order."
+    not_valid: "not valid."
