@@ -100,11 +100,13 @@ var ready = function() {
       "http://i.imgur.com/MzLd2iq.jpg", "http://i.imgur.com/HFIsjsh.jpg",
       "http://i.imgur.com/hJu4XkY.jpg", "http://i.imgur.com/abvjM0A.jpg"
     ],
-    fadeSpeed: 2000,
-    duration: 3000,
+    fadeSpeed: 1200,
+    duration: 8000,
     backgroundSize: SCALING_MODE_COVER
   });
 };
 
 $(document).ready(ready);
-$(document).on('page:change', ready);
+$(document).on('click', '.edit_pass', function(){
+  $('#edit_pass_show').toggleClass('edit_pass_content_hide', 'edit_pass_content_show');
+});

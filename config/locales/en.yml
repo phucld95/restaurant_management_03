@@ -26,6 +26,15 @@ en:
     pass: Input password
     admin: Admin
     not_exist: This account is not exist.
+    success: Success update info
+    fail: Failed update info
+    edit: Edit profile
+    name: Input name
+    newpass: Input new password
+    newpass2: Re-input new password
+    oldpass: Confirm password to update
+    update: Update profile
+    change_pass: Change Password
   footer:
     about: About the house
     about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
