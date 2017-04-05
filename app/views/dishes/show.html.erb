@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<section class="section">
+  <br><br><br><br>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="col-sm-7">
+      <div class="box-left">
+        <div class="item-preview">
+          <%= image_tag @dish.image, alt: "img" %>
+          <br>
+          <%= social_share_button_tag @dish.name,
+            desc: "#{@dish.description}", via: t(".social") %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="sidebar-right">
+        <div class="info-panel">
+          <div class="info-dish">
+            <div class="info_main">
+              <span class="info_name"><%= @dish.name %></span>
+              <div class="info_price heading size-xxl">
+                <b class="t-currency">
+                  <span class="icon">$</span><%= @dish.price %>
+                </b>
+              </div>
+            </div>
+            <div class="info_support">
+              <%= @dish.description %>
+            </div>
+            <div class="info_support">
+              <% if @dish.isAvailable? %>
+                <div class="check">
+                  <span class="fa-stack fa-lg fa-fw">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-check fa-stack-1x"></i>
+                  </span>
+                  <label><%= t ".available" %></label>
+                </div>
+                <div class="info_button">
+                  <button type="submit" class="add-to-cart">
+                    <i class="e-icon -icon-cart -margin-right"></i>
+                    <strong><%= t ".cart" %></strong>
+                  </button>
+                </div>
+                <br>
+                <div class="info_button">
+                  <button type="submit" class="buy-now">
+                    <strong><%= t ".buy" %></strong>
+                  </button>
+                </div>
+              <% else %>
+                <label><%= t ".notavai" %></label>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

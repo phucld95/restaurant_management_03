@@ -56,3 +56,166 @@ en:
     _error: This form contain
     button: Login
     lost_pass: Lost your password?
+  flash:
+    dish:
+      find_fail: Dish not found.
+      create_success: Created dish successfullly!
+      update_success: Updated dish successfully!
+      destroy_success: Deleted dish successfully!
+      destroy_fail: Failed. Something's wrong.
+    combo:
+      find_fail: Dish not found.
+      find_fail: Dish not found.
+      create_success: Created combo successfullly!
+      update_success: Updated combo successfully!
+      destroy_success: Deleted combo successfully!
+      destroy_fail: Failed. Something's wrong.
+  admin:
+    search: Search
+    dishes:
+      index:
+        title: Dishes manager
+        name: Dish
+        add_dish_button: Creat new dish
+        search_fail: Not found.
+      show:
+        title: Dish information
+        field: Field
+        value: Value
+        name: "Name:"
+        price: "Price:"
+        money: $
+        image: "Image:"
+        description: "Description:"
+        order: "Sort order:"
+        active: "Active:"
+        yes: Yes
+        no: No
+      form:
+        name: "Dish name:"
+        price: "Price:"
+        description: Description
+        image: Image link
+        active: Active
+        yes: Yes
+        no: No
+      dish:
+        search: Search
+        input_keyword: Search for dish name or description
+        price: Price
+        status: Active
+        order: No.
+        all: All
+        yes: Available
+        no: Unavailable
+        opition: Opition
+        money: $
+        yes: Yes
+        no: No
+        view_dish_button: View
+        add_dish_button: Add
+        edit_dish_button: Edit
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+    combos:
+      index:
+        title: Combos manager
+        add_combo_button: Add Combo
+      new:
+        title: Create combo
+        name: "Combo name:"
+        description: "Description:"
+      show:
+        title: Combo information
+        field: Field
+        value: Value
+        name: Combo
+        dishes: LIST DISHES
+        description: Description
+        edit_combo_button: Edit combo
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+      edit:
+         delete_combo_button: Delete this combo
+      form:
+        create_combo_button: Create combo
+        update_combo_button: Update combo
+        name: "Combo name:"
+        description: "Description:"
+        dishes: "Choose dishes:"
+      combo:
+        search: Search
+        input_keyword: Search for combo name or description
+        name: Name
+        order: No.
+        discount: Discount
+        view_combo_button: Details
+        edit_combo_button: Edit
+        delete_combo_button: Delete
+        delete_warning: Are you sure?
+        dishes: View dishes
+  button:
+    view: Details
+    add: Add
+    update: Update
+    edit: Edit
+    delete: Delete
+    cancel: Back
+    clear: Clear form
+    all_dish: View all dishes
+  dishes:
+    index:
+      title: OUR MENU
+      slogan: Now That Your Tastes Have Grown Up!
+      money: $
+      not_found: Sorry, dish not found
+    show:
+      title: Dish information
+      field: Field
+      value: Value
+      name: Dish
+      price: Price
+      money: $
+      image: Image
+      description: Description
+      order: "Sort order:"
+      active: "Active:"
+      yes: Yes
+      no: No
+      available: Available
+      cart: Add to Cart
+      buy: Book Now
+      notavai: See you soon
+      social: Awesomecity
+    dish:
+      money: $
+      submit: Add to cart
+      view: View detail
+      search: Search
+      input_keyword: Search for dish name or description
+      order: No.
+      available: Available
+      unavailable: Unavailable
+      all: All
+      sort: "Sort by:"
+      check: "Check available:"
+  combos:
+    index:
+      viewdes: View Detail
+    show:
+      readmore: Read more
+      viewimage: View image
+    combo:
+      money: $
+      view: View detail
+      search: Search
+      input_keyword: Search for combo name or description
+      order: No.
+      available: Available
+      unavailable: Unavailable
+      all: All
+      sort: "Sort by:"
+      check: "Check available:"
+      readmore: Read More
+      off: " off"
+      deal: View Deal

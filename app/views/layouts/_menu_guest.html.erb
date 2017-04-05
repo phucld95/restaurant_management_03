@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav navbar-right animated fadeInDown wow" data-wow-delay="0.3s">
   <li><%= link_to t("home.home"), "#top", class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.4s", method: :get %></li>
-  <li><%= link_to t("home.menu"), "#menu", class: "smoothScroll animated fadeInLeft wow",
+  <li><%= link_to t("home.menu"), dishes_path, class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.5s", method: :get %></li>
   <li><%= link_to t("home.book"), "#book", class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.6s", method: :get %></li>
