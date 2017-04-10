@@ -33,7 +33,7 @@ class AdminsController < ApplicationController
   end
 
   def select_params
-    if admin_params[:password]== ""
+    if admin_params[:password] == ""
       params.require(:admin).permit :name, :email
     elsif admin_params[:password] == admin_params[:password_confirmation]
       params.require(:admin).permit :name, :email, :password

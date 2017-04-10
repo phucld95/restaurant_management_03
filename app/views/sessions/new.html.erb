@@ -1,13 +1,9 @@
 <section id="login" class="parallax-section section-box">
   <div class="login-form">
     <h1><%= t "admin.login" %></h1>
-    <div class="flash-notice">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>">
-          <%= value %>
-        </div>
-      <% end %>
-    </div>
+
+    <%= render "shared/flash" %>
+
     <%= form_for :session, url: login_path do |f| %>
       <%= f.label :email %>
       <%= f.email_field :email, class: "form-control form-group",

@@ -108,9 +108,11 @@ var ready = function() {
 
 $(document).ready(ready);
 $(document).on('click', '.edit_pass', function() {
-  $('#edit_pass_show').toggleClass('edit_pass_content_hide', 'edit_pass_content_show');
+  $('#edit_pass_show').toggleClass('edit-pass-content-hide', 'edit-pass-content-show');
 });
-$(document).on('page:change', ready);
 $(document).on('click', '#searchclear', function(){
   $('#searchinput').val('');
 });
+$(document).ready(setTimeout(function(){
+  $('.alert, .danger, .success, .error, .notice, .info').fadeOut(3000);
+}, 4000));

@@ -2,6 +2,7 @@ scss_files:
   - 'app/assets/stylesheets/**'
 exclude:
   - 'app/assets/stylesheets/application.css'
+  - 'app/assets/stylesheets/animate.css'
   - 'vendor/assets/**'
 linters:
   ImportantRule:
