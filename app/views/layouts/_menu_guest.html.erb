@@ -8,9 +8,8 @@
   <li><%= link_to t("home.combo"), "#combo", class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.35s", method: :get %></li>
   <li><%= link_to t("home.contact"), "#contact", class: "smoothScroll animated fadeInLeft wow",
-    "data-wow-delay": "0.4s", method: :get %></li>
-  <li><%= link_to t("home.cart"), "#seecart", class: "smoothScroll animated fadeInLeft wow",
-    "data-wow-delay": "0.45s", method: :get %></li>
+    "data-wow-delay": "0.75s", method: :get %></li>
+  <li id="cart-text"><%= render "layouts/cart_text" %></li>
   <li id="admin"><%= link_to "admin.admin", login_path, class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.45s", method: :get %></li>
 </ul>

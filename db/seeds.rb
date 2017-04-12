@@ -1,3 +1,7 @@
+Admin.delete_all
+Admin.create! name: "admin", email: "admin@123.com",
+  password: "123123"
+
 Category.create! ([
   {name: "Bread"},
   {name: "Soups"},

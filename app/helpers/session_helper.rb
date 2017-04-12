@@ -7,6 +7,14 @@ module SessionHelper
     @current_admin ||= Admin.find_by id: session[:admin_id]
   end
 
+  def current_order
+    if session[:order_id].present?
+      Order.find_by id: session[:order_id]
+    else
+      Order.new
+    end
+  end
+
   def logged_in?
     current_admin.present?
   end

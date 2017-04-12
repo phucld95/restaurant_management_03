@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.string :code
       t.date :time_in
       t.date :time_out
-      t.boolean :isConfirm
+      t.boolean :isConfirm, default: false
       t.integer :discount
 
       t.timestamps

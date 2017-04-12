@@ -69,8 +69,10 @@ ActiveRecord::Schema.define(version: 20170321023257) do
     t.integer  "dish_id"
     t.integer  "discount"
     t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "price"
+    t.integer  "total_price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["dish_id"], name: "index_order_dishes_on_dish_id"
     t.index ["order_id"], name: "index_order_dishes_on_order_id"
   end
