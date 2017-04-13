@@ -65,6 +65,7 @@ en:
     combo:
       find_fail: Dish not found.
       find_fail: Dish not found.
+      search_fail: Combo not found.
       create_success: Created combo successfullly!
       update_success: Updated combo successfully!
       destroy_success: Deleted combo successfully!
