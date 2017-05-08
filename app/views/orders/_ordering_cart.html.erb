@@ -7,7 +7,7 @@
     </ul>
   </div>
 <% end %>
-<% unless @order_dishes.any? %>
+<% if @order_dishes.blank? %>
   <p class="text-center">
     <%= link_to t("order.empty_item"), dishes_path%>
   </p>
