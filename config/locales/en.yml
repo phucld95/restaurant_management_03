@@ -7,33 +7,8 @@ en:
     menu: Menu
     combo: Combo
     book: Booking
-    contact: Contact
+    contact: Check order
     admin: Admin Only
-  admin:
-    menu: Menu
-    category: Category
-    dish: Dish
-    order: Check Order
-    bill: Export bill
-    profile: Profile
-    setting: Setting
-    logout: Log out
-    login: Login (only for Admin)
-    error_log: Please log in
-    error_wrongpass: Wrong password or email
-    email: Input email
-    pass: Input password
-    admin: Admin
-    not_exist: This account is not exist.
-    success: Success update info
-    fail: Failed update info
-    edit: Edit profile
-    name: Input name
-    newpass: Input new password
-    newpass2: Re-input new password
-    oldpass: Confirm password to update
-    update: Update profile
-    change_pass: Change Password
   footer:
     about: About the house
     about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -65,11 +40,51 @@ en:
     combo:
       find_fail: Dish not found.
       find_fail: Dish not found.
+      combo_fails: Combo not found.
       create_success: Created combo successfullly!
       update_success: Updated combo successfully!
       destroy_success: Deleted combo successfully!
       destroy_fail: Failed. Something's wrong.
+    category:
+      find_fail: Category not found.
+      create_success: Created category successfully!
+      update_success: Updated category successfully!
+      delete_success: Deleted category successfully!
+      delete_fail: Failed. Something's wrong.
+    order:
+      find_fail: Order not found.
+      create_success: Created order successfully!
+      update_success: Updated order successfully!
+      delete_success: Deleted order successfully!
+      delete_fail: Failed. Something's wrong.
+      cant_find_order: Can't find any order with this infomation!
   admin:
+    combo: Combo
+    menu: Menu
+    category: Category
+    dish: Dish
+    order: Check Order
+    bill: Export bill
+    profile: Profile
+    setting: Setting
+    logout: Log out
+    login: Login
+    login2: (only for Admin)
+    error_log: Please log in
+    error_wrongpass: Wrong password or email
+    email: Input email
+    pass: Input password
+    admin: Admin
+    not_exist: This account is not exist.
+    success: Success update info
+    fail: Failed update info
+    edit: Edit profile
+    name: Input name
+    newpass: Input new password
+    newpass2: Re-input new password
+    oldpass: Confirm password to update
+    update: Update profile
+    change_pass: Change Password
     search: Search
     dishes:
       index:
@@ -77,10 +92,12 @@ en:
         name: Dish
         add_dish_button: Creat new dish
         search_fail: Not found.
+      new:
+        title: Create dish
+      edit:
+        title: Edit dish
       show:
         title: Dish information
-        field: Field
-        value: Value
         name: "Name:"
         price: "Price:"
         money: $
@@ -90,6 +107,7 @@ en:
         active: "Active:"
         yes: Yes
         no: No
+        edit_dish: Edit dish
       form:
         name: "Dish name:"
         price: "Price:"
@@ -126,8 +144,10 @@ en:
         description: "Description:"
       show:
         title: Combo information
-        field: Field
-        value: Value
+        category: Category
+        no: No.
+        opition: Opition
+        dish: Dish name
         name: Combo
         dishes: LIST DISHES
         description: Description
@@ -135,7 +155,8 @@ en:
         delete_dish_button: Delete
         delete_warning: Are you sure?
       edit:
-         delete_combo_button: Delete this combo
+        title: Edit combo
+        delete_combo_button: Delete this combo
       form:
         create_combo_button: Create combo
         update_combo_button: Update combo
@@ -153,6 +174,85 @@ en:
         delete_combo_button: Delete
         delete_warning: Are you sure?
         dishes: View dishes
+    categories:
+      index:
+        title: Categories manager
+        add_button: Add new category
+        search_fail: Not found
+      form:
+        name: "Category name:"
+        description: "Description:"
+      show:
+        dish: Dish name
+        opition: Opition
+        add_dish_button: Add dish
+        empty: This category hasn't any dish.
+        title: Category information
+        name: Category
+        opition: Opition
+        category: Category
+        description: Description
+        dishes: LIST DISHES
+        no: "No."
+        edit_category_button: Edit category
+      edit:
+        title: Edit category
+      new:
+        title: Create category
+      category:
+        order: No.
+        name: Category
+        opition: Opition
+        search: Search
+        input_keyword: Search for category name or description
+        view_button: Details
+        edit_button: Edit
+        delete_button: Delete
+        delete_warning: Are you sure?
+    orders:
+      index:
+        title: Orders manager
+        add_order_button: Add new order
+      show:
+        title: Order details
+      new:
+        title: Create order
+      edit:
+        title: Edit order
+      form:
+        code: Order code
+        discount: Discount
+        guest_name: Guest name
+        capacity: Capacity
+        pickdate: Pick a date
+        date: Date
+        time_in: From
+        time_out: To
+        time: Time
+        status: "Status:"
+        approved: Approved
+        canceled: Pending
+      order:
+        search: Search
+        input_keyword: Search for order code or guest name
+        choose: "--- Choose ---"
+        date: "Date:"
+        check: "Status:"
+        code: Code
+        discount: Discount
+        table: Table
+        capacity: Capacity
+        guest_name: Guest name
+        phone: Phone
+        date: Date
+        from: From
+        to: To
+        status: Status
+        all: All
+        approved: Approved
+        canceled: Pending
+        no_table: Not order
+        action: Action
   button:
     view: Details
     add: Add
@@ -162,6 +262,7 @@ en:
     cancel: Back
     clear: Clear form
     all_dish: View all dishes
+    delete_warning: Are you sure?
   dishes:
     index:
       title: OUR MENU
@@ -202,9 +303,18 @@ en:
   combos:
     index:
       viewdes: View Detail
+      continue: ... (continued)
+      from: "Only from"
+      to: "to "
     show:
       readmore: Read more
-      viewimage: View image
+      viewimage: Image
+      include: "Combo includes:"
+      condition: "Terms & conditions:"
+      discount: "Discount "
+      bill: " for total bill."
+      valid: Valid from
+      to: "to "
     combo:
       money: $
       view: View detail
@@ -219,6 +329,11 @@ en:
       readmore: Read More
       off: " off"
       deal: View Deal
+      continue: ... (continued)
+      valid_from: " Valid from"
+      valid_to: " to"
+    showmore: Show more
+    showless: Show less
   order:
     empty_item: "There are no items in your shopping cart.  Please go menu and add some items to your cart."
     delete: Delete
@@ -227,7 +342,69 @@ en:
     update_quantity: Update Quantity
     total_price: "Total price :"
     quantity: "Quantity:"
-    cart_text: "%{cart_size} dishes in cart ( %{total_price}$ )"
+    cart_text: "%{cart_size} items ( %{total_price}$ )"
     not_valid_or_not_active: "is not valid or is not active."
     not_valid_value: "is not a valid order."
     not_valid: "not valid."
+  helpers:
+    submit:
+      dish:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      combo:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      category:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      order:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+  select:
+    em: Early Morning (08:00 - 10:00)
+    lm: Later Morning (10:00 - 12:00)
+    ea: Early Afternoon (13:00 - 15:00)
+    la: Later Afternoon (15:00 - 17:00)
+    ee: Early Evening (17:30 - 19:30)
+    le: Later Evening (20:00 - 22:00)
+    ta: Not important
+    tm: Middle of room
+    ts: Side of room
+    to: Outside
+  reserve:
+    quantity: Please choose capacity
+    table: Please select prefer table
+    date: Choose date
+    time: Please choose your time
+    submit: Finish Booking Table
+    find: Find Table
+    table: Please choose table
+  table:
+    reservation: Reservation
+    available_table: Available Table
+    avail: Table is Available
+    unavail: Table is Unavailable
+    alert: Alert
+    alert1: Please fill all field to select available table!
+    alert2: Please select your prefer table!
+    tab1: 1
+    tab2: 2
+    tab3: 3
+    tab4: 4
+    tab5: 5
+    tab6: 6
+    tab7: 7
+    tab8: 8
+    tab9: 9
+    tab10: 10
+    tab11: 11
+    tab12: 12
+    tab13: 13
+    tab14: 14
+    tab15: 15
+    tab16: 16
+    tab17: 17

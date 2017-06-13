@@ -1,0 +1,66 @@
+<section class="default-section">
+  <div class="transparent-div" id="div-find-table">
+    <h1 class="stylish-heading h1style"><%= t "table.reservation" %></h1>
+    <%= render "reservation" %>
+  </div>
+  <div class="transparent-div3" id="div-show-result" class="div-show-result">
+    <h2 class="stylish-heading h1style"><%= t "table.available_table" %></h2>
+    <%= render "map" %>
+    <div class="btn-guide btn-maru btn-left2 btn-bottom3 text-center">
+      <%= t "table.avail" %></div>
+    <div class="btn-guide btn-batsu btn-right2 btn-bottom3 text-center">
+      <%= t "table.unavail" %></div>
+  </div>
+  <div id="popup1" class="overlay hide">
+    <div class="popup">
+      <h2><%= t "table.alert" %></h2>
+      <a id="close-alert" class="close">&times;</a>
+      <div class="content alert1">
+        <%= t "table.alert1" %>
+      </div>
+      <div class="content alert2">
+        <%= t "table.alert2" %>
+      </div>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2 id="guest-info" class="text-center"><%= t "table.modal_mes1" %></h2>
+        <h2 id="guest-info-confirmed" class="guest-info-confirmed text-center"><%= t "table.modal_mes2" %></h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for @guest, url: guests_path, remote: true do |f| %>
+          <div id="hide-after-guest-info">
+            <%= f.label :name, class: "form-label" %>
+            <%= f.text_field :name, id: "name-guest", class: "form-control form-group", required: true %>
+            <%= f.label :email, class: "form-label" %>
+            <%= f.text_field :email, id: "email-guest", class: "form-control form-group", required: true %>
+            <%= f.label :phoneNum, "phone number", class: "form-label" %>
+            <%= f.text_field :phoneNum, id: "phone-guest", class: "form-control form-group", required: true %>
+          </div>
+          <div id="show-after-guest-info" class="hide">
+            <div class="modal-body text-center text-confirm-order"><%= t "table.modal_mes3" %></div>
+            <div class="modal-body text-center text-confirm-order"><%= t "table.modal_mes4" %></div>
+          </div>
+          <div class="row col-sm-12">
+            <button id="btn-submit-guest" class="btn-guest
+              log-btn-2 btn-submit-modal col-sm-6" type="summit">
+              <%= t "table.modal_mes5" %>
+            </button>
+            <button id="btn-submit-order" class="btn-order
+              log-btn-2 btn-submit-modal col-sm-6">
+              <%= t "table.modal_mes6" %>
+            </button>
+            <div class="close-modal log-btn-2 col-sm-6 text-center">
+              <%= t "table.modal_mes7" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</section>
