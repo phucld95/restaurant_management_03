@@ -54,6 +54,7 @@ en:
       delete_fail: Failed. Something's wrong.
     order:
       find_fail: Order not found.
+      check_your_order: Check your order!
       create_success: Created order successfully!
       update_success: Updated order successfully!
       delete_success: Deleted order successfully!
@@ -347,6 +348,30 @@ en:
     not_valid_or_not_active: "is not valid or is not active."
     not_valid_value: "is not a valid order."
     not_valid: "not valid."
+    order_code: "Order code:"
+    approver: "APPROVED"
+    your_order_has_approved: "Your order has approved. Welcome to Awesomecity"
+    order_completed: "ORDER COMPLETED"
+    thank_for_order: "Thank for your order. We will check your order as soon as possible."
+    ready_to_order: "READY TO ORDER"
+    you_arent_order_table: "You aren't order table."
+    ready_to_order: "Ready to order."
+    table_booked: "Table booked."
+    awesomecity_approved: "Awesomecity approved."
+    your_informations: "Your informations"
+    name: "Name: "
+    email: "Email: "
+    phone: "Phone: "
+    order_infomations: "Order infomations"
+    table_number: "Table number: "
+    date: "Date: "
+    want_to_book: "Want to book another table?"
+    create_new_order: "Create new order"
+    order_items: "Order items"
+    order_status: "Order status:"
+    your_email: "Your email"
+    your_order_code: "Your order code"
+    submit: "Submit"
   helpers:
     submit:
       dish:

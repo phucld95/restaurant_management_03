@@ -1,22 +1,5 @@
-function addComboToCart(combo) {
-  var id = '#quantity-combo-order' + order_combo
-  var quantity = $(id).val();
-  var url = '/order_combos';
-  $.ajax({
-    type:'POST',
-    url: url,
-    data: {
-      order_combo: {
-        quantity: quantity,
-        combo_id: combo
-      }
-    }
-  }).success(function(){
-    $('#cart-text').load(document.URL + ' #order-card-text');
-  });
-}
-
-function updateQuantityComboInCart(order_combo) {
+$(document).on('click', '.update-combo-quantity-in-cart', function() {
+  var order_combo = $('.update-combo-quantity-in-cart').data('id');
   var idQuantityOrderComboField = '#quantity-of-order-combo-' + order_combo
   var idOrderComboRow = '#order-combo-row-' + order_combo
   var idOrderComboTotalPrice = ' #order-order-total-price-' + order_combo
@@ -35,9 +18,10 @@ function updateQuantityComboInCart(order_combo) {
   }).success(function(){
     $(idOrderComboRow).load(document.URL + idOrderComboTotalPrice)
   });
-}
+});
 
-function quantityComboInCart(order_combo) {
+$(document).on('click', '.delete-combo-in-cart', function() {
+  var order_combo = $('.delete-combo-in-cart').data('id');
   var url = '/order_combos/' + order_combo;
   $.ajax({
     type:'DELETE',
@@ -51,27 +35,11 @@ function quantityComboInCart(order_combo) {
     $('#cart-text').load(document.URL + ' #order-card-text');
     $('#cart-content').load(document.URL + ' #cart-content-list')
   });
-}
+});
 
-function addDishToCart(dish) {
-  var id = '#quantity-dish-order-' + dish
-  var quantity = $(id).val();
-  var url = '/order_dishes';
-  $.ajax({
-    type:'POST',
-    url: url,
-    data: {
-      order_dish: {
-        quantity: quantity,
-        dish_id: dish
-      }
-    }
-  }).success(function(){
-    $('#cart-text').load(document.URL + ' #order-card-text');
-  });
-}
-
-function updateQuantityDishInCart(order_dish) {
+$(document).on('click', '.update-dish-quantity-in-cart', function() {
+  var order_dish = $('.update-quantity-in-cart').data('id');
+  console.log(order_dish);
   var idQuantityOrderDishField = '#quantity-of-order-dish-' + order_dish
   var idOrderDishRow = '#order-dish-row-' + order_dish
   var idOrderDishTotalPrice = ' #order-dish-total-price-' + order_dish
@@ -87,14 +55,13 @@ function updateQuantityDishInCart(order_dish) {
       }
     }
   }).success(function(){
-    alert("Hello! I am an alert box!!");
     $(idOrderDishRow).load(document.URL + idOrderDishTotalPrice)
   });
-}
+});
 
-function quantityDishInCart(order_dish) {
-  var url = '/order_dishes/' + order_dish;oncli
-  alert("Hello! I am an alert box!!");
+$(document).on('click', '.delete-dish-in-cart', function() {
+  var order_dish = $('.delete-dish-in-cart').data('id');
+  var url = '/order_dishes/' + order_dish;
   $.ajax({
     type:'DELETE',
     url: url,
@@ -107,4 +74,42 @@ function quantityDishInCart(order_dish) {
     $('#cart-text').load(document.URL + ' #order-card-text');
     $('#cart-content').load(document.URL + ' #cart-content-list')
   });
-}
+});
+
+$(document).on('click', '.add-dish-to-cart', function() {
+  var dish = $('.dish-id').val();
+  var id = '#quantity-dish-order-' + dish;
+  var quantity = $(id).val();
+  var url = '/order_dishes';
+  $.ajax({
+    type:'POST',
+    url: url,
+    data: {
+      order_dish: {
+        quantity: quantity,
+        dish_id: dish
+      }
+    }
+  }).success(function(){
+    $('#cart-text').load(document.URL + ' #order-card-text');
+  });
+});
+
+$(document).on('click', '.add-combo-to-cart', function() {
+  var combo = $('.combo-id').val();
+  var id = '#quantity-combo-order' + combo;
+  var quantity = $(id).val();
+  var url = '/order_combos';
+  $.ajax({
+    type:'POST',
+    url: url,
+    data: {
+      order_combo: {
+        quantity: quantity,
+        combo_id: combo
+      }
+    }
+  }).success(function(){
+    $('#cart-text').load(document.URL + ' #order-card-text');
+  });
+});

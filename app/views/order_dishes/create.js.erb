@@ -1,5 +1,0 @@
-<% if @order.errors.any? || @order_dish.errors.any? %>
-  alert(I18n.t("order.valid"))
-<% else %>
-  $('#cart-text').html('<%= j render "layouts/cart_text" %>')
-<% end %>
