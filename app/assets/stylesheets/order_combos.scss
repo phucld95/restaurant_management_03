@@ -1,0 +1,294 @@
+$orangered: #ff4500;
+$navbar-right: #110606;
+$spectra: #2f4f4f;
+$caribbean-green: #05a793;
+$light-green: #0ac986;
+$bitter: #8f8f81;
+$alabaster: #f9f9f9;
+$white: #fff;
+$geyser: #c9dadd;
+$dove-gray: #666;
+$meadow: #22be5c;
+$shamrock: #32c6a1;
+$pink: #dd7e89;
+$red: #f00;
+$salem: #0ba73e;
+$jellybean: #2a8797;
+$black: #000;
+$hippie-green: #468847;
+$dark-red: #8b0000;
+$blue: #00f;
+$cerulean: #0a93cc;
+$silver: #bdbdbd;
+$tundora: #4c4a4a;
+$gallery: #eaeaea;
+$alto: #dadada;
+$light-grey: #f0f0f0;
+$grey: #ededed;
+$silver-chalice: #afaeae;
+$light-blue: #98bcdf;
+$gray-dark: #444;
+$mexican-red: #a41f35;
+$scorpion: #5f5b5b;
+$alabaster: #fafafa;
+$mystic: #e1e8ed;
+$abbey: #595a5d;
+$sushi: #82b440;
+$dark-sushi: #6f9a37;
+$green-sushi: #7aa93c;
+$boulder: #787878;
+$emperor: #545454;
+$bondi-blue: #0084b4;
+$dark-salem: #0a6f42;
+$cornflower-blue: #6495ed;
+$wild-sand: #f4f4f4;
+$cucumber: #89b556;
+$gray-light: #eee;
+$mercury: #e3e3e3;
+$light-alabaster: #fcfcfc;
+$gray: #919191;
+$carrot: #f9993e;
+$dark-blue: #24297f;
+$grape: #4a1951;
+$east-bay: #4d508e;
+$cardinal: #d11f25;
+$jelly-blue: #2d97a7;
+$yellow: #ff0;
+$golden: #e6c600;
+$golden-dark: #b89d00;
+$alto: #ddd;
+$dark-silver: #aaa;
+$dark-white: rgba(246, 229, 209, .3);
+$martini: rgba(180, 160, 160, .3);
+$black-opacity: rgba(0, 0, 0, .2);
+$gray-opacity: rgba(84, 84, 84, .89);
+$gray-darked: rgba(100, 96, 99, 0);
+$gray-darked2: rgba(100, 96, 99, .85);
+$white-light: rgba(251, 251, 255, .86);
+$blossom: rgba(255, 134, 147, .65);
+$dark-blossom: rgba(188, 114, 113, .66);
+$brick: rgba(155, 34, 45, .93);
+$spring-green: rgba(36, 255, 109, .75);
+$bermuda: rgba(137, 222, 200, .76);
+$pelorous: rgba(54, 178, 194, .71);
+$pelorous-opacity: rgba(54, 178, 194, .91);
+$black-light: rgba(0, 0, 0, .25);
+$grey-opacity: rgba(119, 119, 119, .58);
+$blue-opacity: rgba(44, 76, 134, .68);
+$grey-black: rgba(0, 0, 0, 0);
+$black-like: rgba(0, 0, 0, .6);
+$black-haft: rgba(0, 0, 0, .5);
+$black-dark: rgba(0, 0, 0, .8);
+$fiord: rgba(70, 75, 110, .247059);
+$admin-background: rgba(185, 176, 176, .2);
+$slide-link: #07a6f5;
+$form-background: rgba(253, 255, 255, .7);
+$btn-color1: #41deb6;
+$form-control-color: #23ffd0;
+$outside-ground: rgba(168, 129, 110, .82);
+$inside-ground: rgba(199, 194, 155, .93);
+$modal: #5cb85c;
+$modal-border: #888;
+$modal-background: rgba(0, 0, 0, .4);
+$menu-grid: #5a2149;
+$royalblue: #4169e1;
+$black-light2: #252525;
+$text-block-color: #383838;
+$text-block-color2: #666;
+$btn-all-color: rgba(237, 237, 237, 1);
+$btn-all-color2: rgba(246, 246, 246, 1);
+$btn-all-color3: rgba(255, 255, 255, 1);
+$order-color: #63a8c9;
+$cornflowerblue: #6495ed;
+$pj-button: #b5b7b9;
+$pj-button2: #dedede;
+$pj-button3: #363434;
+$greenyellow: #adff2f;
+$label-red: #b94a48;
+$label-green: #468847;
+$btn-green: #0a922d;
+$black-overlay: rgba(0, 0, 0, .3);
+
+.order-code {
+  span {
+    color: $red;
+    font-size: 20px;
+  }
+}
+
+.user-info {
+  span {
+    color: $red;
+    font-weight: bolder;
+  }
+}
+
+.cart-button-theme-elegant {
+  background: 0 0;
+  border: 0;
+  display: table-cell;
+  height: 38px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+
+  .cart-button-item-count {
+    background: $carrot;
+    border-radius: 20px;
+    color: $white;
+    font-size: 10px;
+    left: 41px;
+    padding: 2px;
+    position: absolute;
+    right: -6px;
+    top: 10px;
+    width: 30px;
+  }
+}
+
+.cart-button {
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 39px;
+  min-width: 0;
+  padding: 8px 12px 10px 11px;
+  transition: all .2s ease-out;
+}
+
+.svg-cart-button-white {
+  background-position: -3px -600px;
+  height: 25px;
+  width: 27px;
+}
+
+.icon-svg {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.tracking-order-process {
+  border: 1px solid $alto;
+  border-radius: 3px;
+  padding: 15px 15px 0;
+  text-align: center;
+}
+
+.tracking-order-process .order-id {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.tracking-order-process .status {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tracking-order-process .status span {
+  color: $dark-salem;
+}
+
+.tracking-order-process .bs-wizard>.bs-wizard-step {
+  padding: 0;
+  position: relative;
+}
+
+.tracking-order-process .bs-wizard>.bs-wizard-step .bs-wizard-stepnum {
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.progress {
+  height: 5px;
+  left: 50%;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.tracking-order-process .bs-wizard>.bs-wizard-step.complete>.progress>.progress-bar {
+  width: 100%;
+}
+
+.tracking-order-process .bs-wizard>.bs-wizard-step>.progress>.progress-bar {
+  background: $bondi-blue;
+  box-shadow: none;
+  transition: none;
+  width: 0;
+}
+
+.progress-bar {
+  background-color: $bondi-blue;
+  box-shadow: inset 0 -1px 0 $black-opacity;
+  color: $white;
+  float: left;
+  font-size: 12px;
+  height: 100%;
+  line-height: 20px;
+  text-align: center;
+  transition: width .6s ease;
+  width: 0;
+}
+
+.progress-bar2 {
+  background-color: $red;
+  box-shadow: inset 0 -1px 0 $gray-darked;
+  color: $white;
+  float: left;
+  font-size: 12px;
+  height: 100%;
+  line-height: 20px;
+  text-align: center;
+  transition: width .6s ease;
+  width: 0;
+}
+
+.tracking-order-process .bs-wizard>.bs-wizard-step>.bs-wizard-dot {
+  background: url("https://vcdn.tikicdn.com/assets/img/check.png") 5px 7px no-repeat $cerulean;
+  border: 2px solid $bondi-blue;
+  border-radius: 50%;
+  box-shadow: none;
+  color: $black;
+  display: block;
+  font-size: 14px;
+  height: 26px;
+  left: 50%;
+  line-height: 23px;
+  margin-left: -15px;
+  margin-top: -10px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: 26px;
+}
+
+.description {
+  color: $cerulean;
+  font-size: 18px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.description2 {
+  color: $grape;
+  font-size: 22px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.info-item {
+  font-size: 16px;
+}
+
+.btn-info {
+  font-size: 20px;
+  margin-top: 10px;
+}

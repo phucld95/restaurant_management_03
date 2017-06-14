@@ -36,12 +36,14 @@
                   </span>
                   <label><%= t ".available" %></label>
                 </div>
-                <%= form_for @order_dish, remote: true do |f| %>
+                <%= form_for :order_dish, remote: true do |f| %>
                   <div class="input-group">
-                    <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+                    <%= f.number_field :quantity, value: 1, class: "form-control", id: "quantity-dish-order-#{@dish.id}", min: 1 %>
                     <div class="input-group-btn">
-                      <%= f.hidden_field :dish_id, value: @dish.id %>
-                      <%= f.submit t ".add_to_cart", class: "btn btn-primary" %>
+                      <div class="btn btn-primary"
+                           onclick="addDishToCart(<%= @dish.id %>)">
+                        <%= t ".add_to_cart" %>
+                      </div>
                     </div>
                   </div>
                 <% end %>
