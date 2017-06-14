@@ -20,6 +20,7 @@ gem "bootstrap-kaminari-views"
 gem "social-share-button"
 gem "will_paginate"
 gem "owlcarousel-rails"
+gem "font-awesome-sass"
 
 group :development, :test do
   gem "byebug", platform: :mri

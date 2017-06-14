@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413065341) do
+ActiveRecord::Schema.define(version: 20170607015529) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20170413065341) do
     t.integer  "dish_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_category_dishes_on_category_id"
+    t.index ["dish_id"], name: "index_category_dishes_on_dish_id"
   end
 
   create_table "combo_dishes", force: :cascade do |t|
@@ -36,10 +38,6 @@ ActiveRecord::Schema.define(version: 20170413065341) do
   create_table "combos", force: :cascade do |t|
     t.string   "description"
     t.integer  "discount"
-    t.string   "name"
-    t.string   "image"
-    t.datetime "from"
-    t.datetime "to"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -73,6 +71,8 @@ ActiveRecord::Schema.define(version: 20170413065341) do
     t.integer  "total_price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["combo_id"], name: "index_order_combos_on_combo_id"
+    t.index ["order_id"], name: "index_order_combos_on_order_id"
   end
 
   create_table "order_dishes", force: :cascade do |t|
@@ -84,18 +84,22 @@ ActiveRecord::Schema.define(version: 20170413065341) do
     t.integer  "total_price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["dish_id"], name: "index_order_dishes_on_dish_id"
+    t.index ["order_id"], name: "index_order_dishes_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer  "guest_id"
     t.integer  "table_id"
     t.string   "code"
-    t.date     "day"
-    t.integer  "time_in"
+    t.date     "time_in"
+    t.date     "time_out"
     t.boolean  "isConfirm",  default: false
-    t.integer  "discount",   default: 0
+    t.integer  "discount"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["guest_id"], name: "index_orders_on_guest_id"
+    t.index ["table_id"], name: "index_orders_on_table_id"
   end
 
   create_table "tables", force: :cascade do |t|
