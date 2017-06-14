@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :order_dishes, only: [:create, :update, :destroy]
   resources :tables
   resources :guests
+  resources :order_combos, only: [:create, :update, :destroy]
 end

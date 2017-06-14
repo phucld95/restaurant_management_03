@@ -1,10 +1,9 @@
-class OrderDish < ApplicationRecord
+class OrderCombo < ApplicationRecord
   belongs_to :order
-  belongs_to :dish
-
+  belongs_to :combo
   validates :quantity, presence: true,
     numericality: {only_integer: true, greater_than: 0}
-  validate :dish_present
+  validate :combo_present
   validate :order_present
 
   before_save :finalize
@@ -14,8 +13,8 @@ class OrderDish < ApplicationRecord
   end
 
   private
-  def dish_present
-    errors.add :dish, t("order.not_valid_or_not_active") unless dish
+  def combo_present
+    errors.add :combo, t("order.not_valid_or_not_active") unless combo
   end
 
   def order_present
@@ -23,7 +22,7 @@ class OrderDish < ApplicationRecord
   end
 
   def finalize
-    self[:price] = dish.price
+    self[:price] = combo.price
     self[:total_price] = quantity * self[:price]
   end
 end

@@ -3,7 +3,7 @@ class DishesController < ApplicationController
 
   def index
     @search = Dish.ransack params[:q]
-    @search.sorts = %w[name, price] if @search.sorts.empty?
+    @search.sorts = %w(name price) if @search.sorts.empty?
     @dishes = @search.result.page(params[:page]).per_page Settings.limit
   end
 
@@ -14,8 +14,6 @@ class DishesController < ApplicationController
   private
   def find_dish
     @dish = Dish.find_by id: params[:id]
-    unless @dish
-      flash[:danger] = t "flash.dish.find_fail"
-    end
+    flash[:danger] = t "flash.dish.find_fail" unless @dish
   end
 end
