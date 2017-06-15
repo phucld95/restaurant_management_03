@@ -1244,6 +1244,21 @@
   }
 }
 
+@keyframes fadeInOut {
+   from, to {
+     opacity: 0;
+     transform: translate3d(0, 100%, 0);
+   }
+   30%, 50%, 70% {
+     opacity: 1;
+     transform: none;
+   }
+ }
+
+.fadeInOut {
+  animation-name: fadeInOut;
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
