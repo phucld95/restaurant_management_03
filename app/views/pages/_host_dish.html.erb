@@ -1,0 +1,34 @@
+<section class="tm-block-top-a uk-block uk-block-default">
+  <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+      <div class="uk-width-1-1">
+        <div class="uk-panel uk-text-center">
+          <h2 class="uk-module-title-alt uk-margin-large-bottom"><%= t "home.our_most" %></h2>
+          <div class="carousel">
+            <% @dishes.each do |dish| %>
+              <div class="uk-width-medium-1-4">
+                <h3 class="uk-margin-small">
+                  <%= link_to dish.name, dish_path(dish) %>
+                </h3>
+                <ul class="tm-rating">
+                  <li><i class="uk-icon-star fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="uk-icon-star fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="uk-icon-star fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="uk-icon-star fa fa-star" aria-hidden="true"></i></li>
+                  <li><i class="uk-icon-star fa fa-star" aria-hidden="true"></i></li>
+                </ul>
+                <%= link_to dish_path(dish) do %>
+                  <%= image_tag dish.image, class: "hot-dish", title: dish.name %>
+                <% end %>
+                <p>
+                  <%= truncate dish.description, length: 100 %>
+                </p>
+                <p class="tm-price">$<%= dish.price %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

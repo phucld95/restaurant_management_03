@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def show
     if valid_page?
+      @combos = Combo.popular_combos
+      @dishes = Dish.popular_dishes
       render "pages/#{params[:page]}"
     else
       render "public/404.html", status: :not_found

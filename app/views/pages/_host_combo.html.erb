@@ -1,0 +1,33 @@
+<section class="home-combos">
+  <h2><%= t "home.host_combo" %></h2>
+  <ul class="uk-grid uk-slideset uk-grid-match uk-flex-center
+    uk-grid-width-1-1 uk-grid-width-xlarge-1-3 uk-grid-width-large-1-3
+    uk-grid-width-medium-1-2 uk-grid-width-small-1-2">
+    <div class="carousel2">
+      <% @combos.each do |combo| %>
+        <li data-uk-filter="pasta" class="uk-active">
+          <div class="uk-panel uk-panel-box uk-panel-box-hover
+            uk-overlay-hover uk-text-left">
+            <div class="uk-text-center uk-panel-teaser">
+              <div>
+                <img src="<%= combo.image %>" class="uk-overlay-scale"
+                  alt=<%= combo.name %> width="90%" height="200">
+                <div class="uk-overlay-panel uk-overlay-background
+                uk-overlay-icon uk-overlay-fade"></div>
+              </div>
+            </div>
+            <h3>
+              <%= link_to combo.name, combo_path(combo) %>
+            </h3>
+            <p>
+              <%= truncate combo.description, length: 100 %>
+            </p>
+            <h4><%= t "home.discount" %>
+              <span><%= combo.discount %>%</span>
+            </h4>
+          </div>
+        </li>
+      <% end %>
+    </div>
+  </ul>
+</section>

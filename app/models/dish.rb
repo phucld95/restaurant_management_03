@@ -9,4 +9,6 @@ class Dish < ApplicationRecord
   validates :price, presence: true, numericality: true
 
   scope :dishes, ->{where isAvailable: true}
+  scope :popular_dishes, ->{joins(:order_dishes).group("dishes.id")
+    .order("count(dishes.id) desc").limit(10)}
 end
