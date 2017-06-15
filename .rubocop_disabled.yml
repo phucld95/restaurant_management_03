@@ -201,3 +201,8 @@ Bundler/OrderedGems:
   Enabled: false
   Include:
     - '**/Gemfile'
+Lint/AmbiguousBlockAssociation:
+  StyleGuide: '#syntax'
+  Enabled: false
+Layout/SpaceInsideBlockBraces:
+  Enabled: false

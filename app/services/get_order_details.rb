@@ -1,5 +1,5 @@
 class GetOrderDetails
-  def initialize(param)
+  def initialize param
     @order = param
   end
 

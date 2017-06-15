@@ -12,14 +12,10 @@ class AdminsController < ApplicationController
   end
 
   def update
-    if @current_admin.authenticate params[:admin][:old_password]
-      if @current_admin.update_attributes select_params
-        flash[:success] = t "admin.success"
-        redirect_to admin_path
-      else
-        flash[:danger] = t "admin.fail"
-        render :edit
-      end
+    if (@current_admin.authenticate params[:admin][:old_password]).present? &&
+      @current_admin.update_attributes(select_params)
+      flash[:success] = t "admin.success"
+      redirect_to admin_path
     else
       flash[:danger] = t "admin.fail"
       render :edit
@@ -33,10 +29,11 @@ class AdminsController < ApplicationController
   end
 
   def select_params
-    if admin_params[:password] == ""
-      params.require(:admin).permit :name, :email
-    elsif admin_params[:password] == admin_params[:password_confirmation]
-      params.require(:admin).permit :name, :email, :password
+    params.require(:admin).permit case admin_params[:password]
+    when ""
+      [:name, :email]
+    when admin_params[:password_confirmation]
+      [:name, :email, :password]
     end
   end
 end

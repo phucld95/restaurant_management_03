@@ -1,7 +1,7 @@
 en:
   hello: "Hello world"
   res: Restaurant
-  brand: Awesomecity
+  brand: "Awesomecity"
   home:
     home: Home
     menu: Menu
@@ -12,7 +12,7 @@ en:
   footer:
     about: About the house
     about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-     sed diam nonummy nibh euismod tincidunt ut laoreet.
+      sed diam nonummy nibh euismod tincidunt ut laoreet.
       Dolore magna aliquam erat volutpat ipsum.
     contact: Contact Detail
     contact_content1: 123 Delicious Street, San Francisco, CA 10110
@@ -38,7 +38,6 @@ en:
       destroy_success: Deleted dish successfully!
       destroy_fail: Failed. Something's wrong.
     combo:
-      find_fail: Dish not found.
       find_fail: Dish not found.
       combo_fails: Combo not found.
       search_fail: Combo not found.
@@ -162,8 +161,6 @@ en:
       form:
         create_combo_button: Create combo
         update_combo_button: Update combo
-        name: "Combo name:"
-        description: "Description:"
         dishes: "Choose dishes:"
       combo:
         search: Search
@@ -434,3 +431,9 @@ en:
     tab15: 15
     tab16: 16
     tab17: 17
+  guest:
+    fail_create: "Create Guest Failed!!"
+    success_create: "Create Guest Success"
+  admin_order:
+    edit_dish_of_order: Edit dish of order
+    add_dish_to_order: Add dish to order
