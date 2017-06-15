@@ -286,9 +286,20 @@ p {
 
 .info-item {
   font-size: 16px;
+
+  .table-id {
+    color: $red;
+    font-weight: bolder;
+  }
 }
 
 .btn-info {
   font-size: 20px;
   margin-top: 10px;
+}
+
+.go-to-book {
+  background: $spectra;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

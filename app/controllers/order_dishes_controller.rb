@@ -1,23 +1,22 @@
 class OrderDishesController < ApplicationController
+  include LoadOrder
+  before_action :load_order, only: [:create, :update, :destroy]
+  before_action :find_dish, only: [:update, :destroy]
+
   def create
-    @order = current_order
     @order_dish = @order.order_dishes.new order_dish_params
     @order.save
     session[:order_id] = @order.id
   end
 
   def update
-    @order = current_order
-    @order_dish = @order.order_dishes.find_by id: params[:id]
     @order_dish.update_attributes order_dish_params
-    @order_dishes = @order.order_dishes
+    GetOrderDetails.new(@order).perform
   end
 
   def destroy
-    @order = current_order
-    @order_dish = @order.order_dishes.find_by id: params[:id]
     @order_dish.destroy
-    @order_dishes = @order.order_dishes
+    GetOrderDetails.new(@order).perform
   end
 
   private
