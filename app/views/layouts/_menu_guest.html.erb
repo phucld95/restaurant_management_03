@@ -5,12 +5,11 @@
     "data-wow-delay": "0.50s", method: :get %></li>
   <li><%= link_to t("home.book"), tables_path, class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.55s", method: :get %></li>
-  <li><%= link_to t("home.combo"), "#combo", class: "smoothScroll animated fadeInDown wow",
+  <li><%= link_to t("home.combo"), combos_path, class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.6s", method: :get %></li>
   <li><%= link_to t("home.contact"), "#contact", class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.65s", method: :get %></li>
-  <li id="cart-text" class="smoothScroll fade-in-left">
-    <%= render "layouts/cart_text" %></li>
-  <li id="admin"><%= link_to "admin.admin", login_path, class: "smoothScroll animated fadeInDown wow",
-    "data-wow-delay": "0.75s", method: :get %></li>
+  <li class="smoothScroll fade-in-left">
+    <%= render "layouts/cart_text" %>
+  </li>
 </ul>

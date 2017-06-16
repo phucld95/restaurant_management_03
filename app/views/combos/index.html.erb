@@ -1,0 +1,33 @@
+<section class="section user-site">
+  <br><br><br>
+  <div class="owl-carousel">
+    <% @combo_support.combo.each do |combo| %>
+      <% if combo.discount > 39 %>
+        <div class="slide">
+          <span class="hot"></span>
+          <%= link_to combo_path(combo), title: combo.name, target:"_self" do %>
+            <%= image_tag combo.image %>
+          <% end %>
+          <%= link_to combo_path(combo), class:"link", target:"_self" do %>
+            <%= combo.name %> <i class="fa fa-angle-double-right"></i>
+          <% end %>
+          <p>
+            <%= t ".from" %>
+            <span class="valid">
+              <%= combo.from.in_time_zone(Settings.time_zone).strftime("%b %d %Y") %>
+            </span>
+            <%= t ".to" %>
+            <span class="valid">
+              <%= combo.to.in_time_zone(Settings.time_zone).strftime("%b %d %Y") %>
+            </span>
+          </p>
+          <h1>&nbsp;<%= combo.discount %></h1>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <br>
+  <div id="combos" class="col-xs-12 bloc combo-user">
+    <%= render "combo" %>
+  </div>
+</section>

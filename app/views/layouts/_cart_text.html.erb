@@ -1,13 +1,9 @@
-<div class="btn btn-link, smoothScroll animated fadeInLeft wow" id="order-card-text">
-  <%= link_to cart_path do %>
-    <div class="cart-button cart-button-theme-elegant">
-      <span>
-        <i class="fa fa-shopping-cart fa-2x icon-svg svg-cart-button-white"
-          aria-hidden="true"></i>
-      </span>
-      <span class="cart-button-item-count">
-        <%= current_order.order_dishes.size + current_order.order_combos.size %>
-      </span>
-    </div>
-  <% end %>
-</div>
+<%= link_to cart_path do %>
+  <i class="fa fa-shopping-cart"
+    aria-hidden="true"></i>
+  <span class="badge">
+    <small>
+      <%= current_order.order_dishes.size + current_order.order_combos.size %>
+    </small>
+  </span>
+<% end %>

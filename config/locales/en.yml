@@ -172,6 +172,7 @@ en:
         edit_combo_button: Edit combo
         delete_dish_button: Delete
         delete_warning: Are you sure?
+        add_to_cart: Add to cart
       edit:
         title: Edit combo
         delete_combo_button: Delete this combo
@@ -331,6 +332,7 @@ en:
       bill: " for total bill."
       valid: Valid from
       to: "to "
+      close: Close
     combo:
       money: $
       view: View detail
@@ -350,6 +352,9 @@ en:
       valid_to: " to"
     showmore: Show more
     showless: Show less
+    search:
+      search: Search
+      input_keyword: Search for combo name or description
   order:
     empty_item: "There are no items in your shopping cart.  Please go menu and add some items to your cart."
     delete: Delete

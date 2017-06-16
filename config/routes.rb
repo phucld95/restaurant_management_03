@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :tables
   resources :guests
   resources :order_combos, only: [:create, :update, :destroy]
+  resources :combos, only: [:index, :show]
 end

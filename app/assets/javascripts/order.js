@@ -1,3 +1,16 @@
+$(document).on('turbolinks:load', function(){
+  $('.owl-carousel').owlCarousel({
+    autoPlay: 4000,
+    touchDrag: true,
+    stopOnHover: true,
+    items: 2,
+    itemsDesktop: [1119,2],
+    itemsDesktopSmall: [979, 2],
+    itemsTablet: [768,2],
+    itemsMobile: [479,1]
+  });
+});
+
 $(document).on('click', '.update-combo-quantity-in-cart', function() {
   var order_combo = $(this).data('id');
   var idQuantityOrderComboField = '#quantity-of-order-combo-' + order_combo;

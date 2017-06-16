@@ -2816,7 +2816,7 @@ a:visited {
 
 .row3 {
   color: $golden;
-  font-family: Love Ya Like A Sister;
+  font-family: 'Love Ya Like A Sister', sans-serif;
   font-size: 2em;
   font-style: italic;
   font-variant: small-caps;
@@ -2982,7 +2982,7 @@ a:visited {
 .home-title {
   border: 1vh solid $white;
   color: $white;
-  font-family: Love Ya Like A Sister;
+  font-family: Love Ya Like A Sister, serif;
   font-size: 10vw;
   left: 15%;
   padding: 5vw;
@@ -3014,7 +3014,7 @@ a:visited {
 
 .combo-title-style {
   color: $golden-dark;
-  font-family: Love Ya Like A Sister;
+  font-family: Love Ya Like A Sister, serif;
   font-size: 40px;
   font-weight: bold;
 }
@@ -3039,7 +3039,7 @@ a:visited {
 .nav.navbar-nav.navbar-right {
   li a {
     color: $navbar-right;
-    font-family: Sanchez;
+    font-family: Sanchez, serif;
     font-size: 1vw;
     text-transform: uppercase;
   }
@@ -3132,4 +3132,17 @@ a:visited {
   animation: fadeInOut 5s ease 1s forwards;
   z-index: 9999;
   box-shadow: 2px 6px 11px $flash-shadow;
+}
+
+.navbar-default {
+  padding: 5px;
+
+  .fa-shopping-cart {
+    font-size: 1.5em;
+  }
+
+  .badge {
+    background-color: $orangered;
+    margin: -25px 0 0 -10px;
+  }
 }
