@@ -3,7 +3,6 @@
     <h1 class="stylish-heading h2style text-center">
       <%= t "flash.order.check_your_order" %>
     </h1>
-    <%= render "shared/flash" %>
     <%= form_for :order, url: orders_path, method: :get do |f| %>
       <%= f.label :email, class: "form-label" %>
       <%= f.email_field :email, class: "form-control form-group",
