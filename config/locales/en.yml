@@ -414,6 +414,13 @@ en:
     alert: Alert
     alert1: Please fill all field to select available table!
     alert2: Please select your prefer table!
+    modal_mes1: Input your information to complete booking
+    modal_mes2: Please confirm your order
+    modal_mes3: All item in Cart will be add to this order!
+    modal_mes4: And you can change it in Check Order
+    modal_mes5: Submit info
+    modal_mes6: Confirm Order
+    modal_mes7: Cancel
     tab1: 1
     tab2: 2
     tab3: 3
