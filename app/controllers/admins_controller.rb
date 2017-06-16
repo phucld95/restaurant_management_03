@@ -29,11 +29,13 @@ class AdminsController < ApplicationController
   end
 
   def select_params
-    params.require(:admin).permit case admin_params[:password]
-    when ""
-      [:name, :email]
-    when admin_params[:password_confirmation]
-      [:name, :email, :password]
-    end
+    selected_params =
+      case admin_params[:password]
+      when ""
+        [:name, :email]
+      when admin_params[:password_confirmation]
+        [:name, :email, :password]
+      end
+    params.require(:admin).permit selected_params
   end
 end

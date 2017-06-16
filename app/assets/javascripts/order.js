@@ -1,10 +1,10 @@
 $(document).on('click', '.update-combo-quantity-in-cart', function() {
   var order_combo = $(this).data('id');
-  var idQuantityOrderComboField = '#quantity-of-order-combo-' + order_combo
-  var idOrderComboRow = '#order-combo-row-' + order_combo
-  var idOrderComboTotalPrice = ' #order-order-total-price-' + order_combo
+  var idQuantityOrderComboField = '#quantity-of-order-combo-' + order_combo;
+  var idOrderComboRow = '#order-combo-row-' + order_combo;
+  var idOrderComboTotalPrice = ' #order-order-total-price-' + order_combo;
   var quantity = $(idQuantityOrderComboField).val();
-  var url = '/order_combos/' + order_combo
+  var url = '/order_combos/' + order_combo;
 
   $.ajax({
     type:'PATCH',
@@ -16,7 +16,7 @@ $(document).on('click', '.update-combo-quantity-in-cart', function() {
       }
     }
   }).success(function(){
-    $(idOrderComboRow).load(document.URL + idOrderComboTotalPrice)
+    $(idOrderComboRow).load(document.URL + idOrderComboTotalPrice);
   });
 });
 
@@ -33,16 +33,15 @@ $(document).on('click', '.delete-combo-in-cart', function() {
     }
   }).success(function(){
     $('#cart-text').load(document.URL + ' #order-card-text');
-    $('#cart-content').load(document.URL + ' #cart-content-list')
+    $('#cart-content').load(document.URL + ' #cart-content-list');
   });
 });
 
 $(document).on('click', '.update-dish-quantity-in-cart', function() {
   var order_dish = $(this).data('id');
-  console.log(order_dish);
-  var idQuantityOrderDishField = '#quantity-of-order-dish-' + order_dish
-  var idOrderDishRow = '#order-dish-row-' + order_dish
-  var idOrderDishTotalPrice = ' #order-dish-total-price-' + order_dish
+  var idQuantityOrderDishField = '#quantity-of-order-dish-' + order_dish;
+  var idOrderDishRow = '#order-dish-row-' + order_dish;
+  var idOrderDishTotalPrice = ' #order-dish-total-price-' + order_dish;
   var quantity = $(idQuantityOrderDishField).val();
   var url = '/order_dishes/' + order_dish;
   $.ajax({
@@ -55,7 +54,7 @@ $(document).on('click', '.update-dish-quantity-in-cart', function() {
       }
     }
   }).success(function(){
-    $(idOrderDishRow).load(document.URL + idOrderDishTotalPrice)
+    $(idOrderDishRow).load(document.URL + idOrderDishTotalPrice);
   });
 });
 
@@ -72,7 +71,7 @@ $(document).on('click', '.delete-dish-in-cart', function() {
     }
   }).success(function(){
     $('#cart-text').load(document.URL + ' #order-card-text');
-    $('#cart-content').load(document.URL + ' #cart-content-list')
+    $('#cart-content').load(document.URL + ' #cart-content-list');
   });
 });
 
