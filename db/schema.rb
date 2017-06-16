@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170607015529) do
     t.string   "name"
     t.string   "email"
     t.string   "role"
-    t.string   "phoneNum"
+    t.string   "phone_num"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -71,8 +71,6 @@ ActiveRecord::Schema.define(version: 20170607015529) do
     t.integer  "total_price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["combo_id"], name: "index_order_combos_on_combo_id"
-    t.index ["order_id"], name: "index_order_combos_on_order_id"
   end
 
   create_table "order_dishes", force: :cascade do |t|
@@ -91,9 +89,8 @@ ActiveRecord::Schema.define(version: 20170607015529) do
   create_table "orders", force: :cascade do |t|
     t.integer  "guest_id"
     t.integer  "table_id"
-    t.string   "code"
-    t.date     "time_in"
-    t.date     "time_out"
+    t.date     "day"
+    t.integer  "time_in"
     t.boolean  "is_confirm", default: false
     t.integer  "discount"
     t.datetime "created_at",                 null: false

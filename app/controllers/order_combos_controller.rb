@@ -5,9 +5,7 @@ class OrderCombosController < ApplicationController
 
   def create
     @order_combo = @order.order_combos.new order_combo_params
-    unless @order.save
-      flash[:danger] = t "flash.combo.search_fail"
-    end
+    flash[:danger] = t "flash.combo.search_fail" unless @order.save
     session[:order_id] = @order.id
   end
 

@@ -26,6 +26,7 @@ AllCops:
     - db/migrate/**
     - spec/controllers/**
     - spec/**
+    - app/models/**
 # Indent private/protected/public as deep as method definitions
 Style/AccessModifierIndentation:
   EnforcedStyle: indent

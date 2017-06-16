@@ -4,7 +4,7 @@ class CreateHumen < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.string :role
-      t.string :phoneNum
+      t.string :phone_num
       t.string :password_digest
 
       t.timestamps

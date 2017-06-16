@@ -8,11 +8,16 @@ module SessionHelper
   end
 
   def current_order
-    if session[:order_id].present?
-      Order.find_by id: session[:order_id]
+    order_id = session[:order_id]
+    if order_id.present?
+      Order.find_by id: order_id
     else
       Order.new
     end
+  end
+
+  def current_guest guest
+    session[:guest] = guest
   end
 
   def logged_in?
