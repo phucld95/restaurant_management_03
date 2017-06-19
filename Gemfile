@@ -24,6 +24,7 @@ gem "font-awesome-sass"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "rspec-rails"
 end
 
 group :development do
@@ -51,5 +52,4 @@ group :test do
   gem "simplecov", require: false
   gem "rspec-activemodel-mocks"
   gem "cucumber-rails", require: false
-  gem "rspec-rails"
 end
