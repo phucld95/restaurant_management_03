@@ -9,6 +9,23 @@ en:
     book: Booking
     contact: Check order
     admin: Admin Only
+    great_food: Great food. Tastes good.
+    host_combo: "__ HOTTEST COMBO __"
+    discount: "Discount: "
+    book_online: "Book Online"
+    reservations: "Reservations"
+    for_reservations: "for reservations &amp; enquiries"
+    tel: "010-020-0780"
+    location: "Location"
+    review_delicions: "123 Delicious Street,"
+    san_francisco: "San Francisco,"
+    ca_10110 : "CA 10110"
+    our_most: "__ Our most loved dishes __"
+    description: "Learn from the past, set vivid, detailed goals for the future,
+      and live in the only moment of time over which you have any control: now.
+      Optimism is the faith that leads to achievement. Nothing can be done without
+      hope and confidence. If you can dream it, you can do it. Do it now, not tomorrow.
+      Always continue the climb. It is possible for you to do."
   footer:
     about: About the house
     about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,

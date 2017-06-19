@@ -103,7 +103,7 @@
           </p>
           <p class="info-item">
             <%= t "order.phone" %>
-            <span><%= current_order.guest.phoneNum %></span>
+            <span><%= current_order.guest.phone_num %></span>
           </p>
         </div>
         <br>
@@ -135,7 +135,7 @@
           <h4 class="inline">
             <%= t "order.want_to_book" %>
           </h4>
-          <%= form_for :order, url: order_path, method: :get do |f| %>
+          <%= form_for :order, url: cart_path, method: :get do |f| %>
             <%= f.submit t("order.create_new_order"), class: "btn btn-info inline" %>
           <% end %>
         </div>
