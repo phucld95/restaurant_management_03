@@ -673,8 +673,8 @@ body {
 
   img {
     border: 0;
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    width: 40px;
   }
 }
 
@@ -3576,5 +3576,70 @@ a:visited {
     li:first-child::after {
       content: none;
     }
+  }
+}
+
+
+.admin-dish-table {
+  tr a {
+    font-size: 18px !important;
+  }
+
+  tr {
+    line-height: 24px !important;
+  }
+
+  .tr-show tr {
+    padding-bottom: 20px;
+  }
+}
+
+.admin-form-dish {
+  .form-label {
+    color: $black !important;
+    font-size: 20px !important;
+  }
+
+  label {
+    font-size: 16px !important;
+  }
+}
+
+.add {
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: -15px;
+  }
+
+  i {
+    font-size: 20px !important;
+  }
+
+  .w180 {
+    margin-left: 10px;
+    width: 80%;
+  }
+}
+
+.form-control-feedback {
+  margin-right: 18%;
+  opacity: .3;
+}
+
+.form-category {
+  .form-label {
+    color: $black !important;
+    font-size: 20px !important;
+  }
+
+  span {
+    font-size: 20px !important;
+  }
+}
+
+.show-category {
+  .btn {
+    margin-top: -30px;
   }
 }

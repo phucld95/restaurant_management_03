@@ -1,0 +1,73 @@
+<section class="section admin-site">
+  <br><br>
+  <div class="col-sm-8 col-sm-offset-2">
+    <h1><%= t ".title" %></h1>
+    <div class="bloc">
+      <table dir="ltr" class="default-dg-table combo-admin admin-dish-table">
+        <tbody>
+          <tr class="dg_tr tr-show" id="di_row_0">
+            <td class="default_dg_td dg-left dg-nowrap">
+              <b><%= t ".image" %></b>
+            </td>
+            <td class="default_dg_td dg-left">
+              <%= image_tag @dish.image, class: "icon-big",
+                onerror: "this.src='https://getawayoutdoors.com.au/UploadFiles/noimage.jpg';" %>
+            </td>
+          </tr>
+          <tr class="dg_tr" id="di_row_0">
+            <td class="default_dg_td dg-left dg-nowrap">
+              <b><%= t ".name" %></b>
+            </td>
+            <td class="default_dg_td dg-left"><%= @dish.name %></td>
+          </tr>
+          <tr class="dg_tr" id="di_row_0">
+            <td class="default_dg_td dg-left dg-nowrap">
+              <b><%= t ".description" %></b>
+            </td>
+            <td class="default_dg_td dg-left"><%= @dish.description %></td>
+          </tr>
+          <tr class="dg_tr" id="di_row_0">
+            <td class="default_dg_td dg-left dg-nowrap">
+              <b><%= t ".price" %></b>
+            </td>
+            <td class="default_dg_td dg-left"><%= @dish.price %></td>
+          </tr>
+          <tr class="dg_tr" id="di_row_0">
+            <td class="default_dg_td dg-left dg-nowrap">
+              <b><%= t ".categories" %></b>
+            </td>
+            <td class="default_dg_td dg-left">
+              <% @dish.categories.each do |cate| %>
+                <% if cate != @dish.categories.last %>
+                  <%= link_to cate.name, admin_category_path(cate) %>,
+                <% else %>
+                  <%= link_to cate.name, admin_category_path(cate) %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+          <tr class="dg_tr" id="di_row_0">
+            <td class="default_dg_td dg-left dg-nowrap">
+              <b><%= t ".active" %></b>
+            </td>
+            <td class="default_dg_td dg-left">
+              <% if @dish.is_available? %><%= t ".yes" %>
+              <% else %><%= t ".no" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="form">
+        <div class="row">
+          <div class="">
+            <%= link_to t(".edit_dish"), edit_admin_dish_path(@dish),
+              method: :get, class: "btn btn-link btn-lg pull-left" %>
+            <%= link_to t("button.cancel"), :back,
+              class: "btn btn-link btn-lg pull-right" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

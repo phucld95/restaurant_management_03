@@ -52,6 +52,7 @@ en:
       find_fail: Guest not found.
     dish:
       find_fail: Dish not found.
+      destroy: Deleted dish successfully!
       create_success: Created dish successfullly!
       update_success: Updated dish successfully!
       destroy_success: Deleted dish successfully!
@@ -120,7 +121,7 @@ en:
       index:
         title: Dishes manager
         name: Dish
-        add_dish_button: Creat new dish
+        add_dish_button: Create new dish
         search_fail: Not found.
       new:
         title: Create dish
@@ -138,6 +139,7 @@ en:
         yes: Yes
         no: No
         edit_dish: Edit dish
+        categories: Categories
       form:
         name: "Dish name:"
         price: "Price:"
@@ -146,6 +148,7 @@ en:
         active: Active
         yes: Yes
         no: No
+        categories: Categories
       dish:
         search: Search
         input_keyword: Search for dish name or description
@@ -207,6 +210,7 @@ en:
         delete_combo_button: Delete
         delete_warning: Are you sure?
         dishes: View dishes
+        add_combo: + Add combo
     categories:
       index:
         title: Categories manager
@@ -215,6 +219,7 @@ en:
       form:
         name: "Category name:"
         description: "Description:"
+        dishes: "Dishes:"
       show:
         dish: Dish name
         opition: Opition
@@ -242,6 +247,7 @@ en:
         edit_button: Edit
         delete_button: Delete
         delete_warning: Are you sure?
+        add: + Add category
     orders:
       index:
         title: Orders manager

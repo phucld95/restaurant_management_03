@@ -479,7 +479,7 @@ Dish.create! ([
    image: "http://www.sunnyqueen.com.au/wp-content/uploads/2013/09/egg-and-bacon-pie2009-09-21-113638.jpg",
    description: "The bacon and egg pie is a savory pie consisting of a crust containing bacon, egg and sometimes onion, peas, tomato and cheese.",
    is_available: true
-  },
+  }
 ])
 
 CategoryDish.create!([

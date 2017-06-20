@@ -1,0 +1,15 @@
+<section class="section admin-site">
+  <br><br>
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
+    <h1><%= t ".title" %></h1>
+    <br><br>
+    <div class="bloc">
+      <div id="dishes" class="search-form col-xs-12">
+        <%= render "dish", dishes_support: @dishes_support %>
+      </div>
+      <br><br><br>
+      <%= link_to t(".add_dish_button"), new_admin_dish_path,
+        class: "btn btn-primary col-md-offset-5" %>
+    </div>
+  </div>
+</section>
