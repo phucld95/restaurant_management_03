@@ -15,7 +15,7 @@ $(document).on('click', '.update-combo-quantity-in-cart', function() {
   var order_combo = $(this).data('id');
   var idQuantityOrderComboField = '#quantity-of-order-combo-' + order_combo;
   var idOrderComboRow = '#order-combo-row-' + order_combo;
-  var idOrderComboTotalPrice = ' #order-order-total-price-' + order_combo;
+  var idOrderComboTotalPrice = ' #order-combo-total-price-' + order_combo;
   var quantity = $(idQuantityOrderComboField).val();
   var url = '/order_combos/' + order_combo;
 
@@ -109,7 +109,7 @@ $(document).on('click', '.add-dish-to-cart', function() {
 
 $(document).on('click', '.add-combo-to-cart', function() {
   var combo = $('.combo-id').val();
-  var id = '#quantity-combo-order' + combo;
+  var id = '#quantity-combo-order-' + combo;
   var quantity = $(id).val();
   var url = '/order_combos';
   $.ajax({

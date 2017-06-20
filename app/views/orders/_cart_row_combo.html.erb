@@ -9,7 +9,7 @@
           <h4 class="text-left"> <%= t "order.unit_price" %>
             <span><%= number_to_currency order_combo.price %></span>
           </h4>
-          <div id=<%= "order-combo-row-#{order_dish.id}" %>>
+          <div id=<%= "order-combo-row-#{order_combo.id}" %>>
             <div id="<%= "order-combo-total-price-#{order_combo.id}" %>">
               <h4 class="text-left"> <%= t "order.total_price" %>
                 <%= number_to_currency order_combo.total_price %>
