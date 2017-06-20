@@ -76,6 +76,7 @@ en:
       delete_success: Deleted order successfully!
       delete_fail: Failed. Something's wrong.
       cant_find_order: Can't find any order with this infomation!
+      find_order: Found order successfully!
   admin:
     combo: Combo
     menu: Menu

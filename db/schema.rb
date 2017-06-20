@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 20170413065341) do
     t.integer  "table_id"
     t.string   "code"
     t.date     "day"
-    t.string   "code"
     t.integer  "time_in"
     t.boolean  "is_confirm", default: false
     t.integer  "discount",   default: 0

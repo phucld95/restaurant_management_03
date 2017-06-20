@@ -1,4 +1,12 @@
 class OrdersController < ApplicationController
+  def index
+    if params[:order]
+      order = Order.find_by code: params[:order][:code]
+      session[:order_id] = order.id
+      redirect_to order_path
+    end
+  end
+
   def show
     @order_dishes = current_order.order_dishes
     @order_combos = current_order.order_combos
@@ -10,7 +18,8 @@ class OrdersController < ApplicationController
       order = Order.find_by code: info[:code]
       if order && order.guest.email == info[:email]
         session[:order_id] = order.id
-        redirect_to order_path
+        flash[:success] = t "flash.order.find_order"
+        redirect_to cart_path
       else
         flash[:danger] = t "flash.order.cant_find_order"
         redirect_to orders_path
