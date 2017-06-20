@@ -8,14 +8,14 @@
   <%= render "combos/search" %>
 </div>
 <div id="pagination" class="apple-pagination">
-  <%= paginate @combo_support.combos(params), remote: true %>
+  <%= paginate @combo_support.combos_search(params), remote: true %>
 </div>
 <div id="counter" class="pagination_count text-center counter">
-  <%= page_entries_info @combo_support.combos(params), remote: true %>
+  <%= page_entries_info @combo_support.combos_search(params), remote: true %>
 </div>
 <div class="deal-container" >
   <div class="col-sm-12">
-    <% @combo_support.combos(params).each do |combo| %>
+    <% @combo_support.combos_search(params).each do |combo| %>
       <div class="deal">
         <%= link_to combo_path(combo), target: "_blank" do %>
           <% image_tag combo.image, class:"lazy-img", title: combo.name,
@@ -35,7 +35,8 @@
         </div>
         <div class="description">
           <p>
-            <%= truncate combo.description, length: 100, omission: t(".continue") %>
+            <%= truncate combo.description, length: Settings.max_length,
+              omission: t(".continue") %>
           </p>
         </div>
         <ul class="details">

@@ -1,15 +1,15 @@
 class Supports::Combo
-  attr_reader :combo
+  attr_reader :combos
 
   def initialize arg
     @combos = arg
   end
 
-  def combo
+  def combos
     @combos
   end
 
-  def combos params
+  def combos_search params
     search(params).result.page(params[:page]).per_page Settings.limit
   end
 
