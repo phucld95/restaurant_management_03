@@ -25,6 +25,10 @@ gem "font-awesome-sass"
 group :development, :test do
   gem "byebug", platform: :mri
   gem "rspec-rails"
+  gem "database_cleaner"
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "rails-controller-testing"
 end
 
 group :development do

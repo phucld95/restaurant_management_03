@@ -1,14 +1,14 @@
 require "rails_helper"
 
-describe OrdersController do
+describe TablesController do
   before :each do
     @request.host = "localhost:3000"
   end
 
   describe "GET #index" do
-    it "show index order" do
+    it "Table index" do
       get :index
-      expect(response).to have_http_status 200
+      expect(response).to render_template :index
     end
   end
 end

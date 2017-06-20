@@ -1,13 +1,13 @@
 require "rails_helper"
 
-describe OrdersController do
+describe PagesController do
   before :each do
     @request.host = "localhost:3000"
   end
 
-  describe "GET #index" do
-    it "show index order" do
-      get :index
+  describe "GET #show" do
+    it "show home page" do
+      get :show, params: {page: :home}
       expect(response).to have_http_status 200
     end
   end
