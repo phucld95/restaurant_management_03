@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170413065341) do
     t.string   "phone_num"
     t.string   "password_digest"
     t.integer  "admin_role"
+    t.string   "code"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

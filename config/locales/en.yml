@@ -48,6 +48,8 @@ en:
     button: Login
     lost_pass: Lost your password?
   flash:
+    guest:
+      find_fail: Guest not found.
     dish:
       find_fail: Dish not found.
       create_success: Created dish successfullly!
@@ -382,6 +384,7 @@ en:
     name: "Name: "
     email: "Email: "
     phone: "Phone: "
+    guest_id: "Guest ID: "
     order_infomations: "Order infomations"
     table_number: "Table number: "
     date: "Date: "
@@ -444,6 +447,9 @@ en:
     modal_mes5: Submit info
     modal_mes6: Confirm Order
     modal_mes7: Cancel
+    submit: Submit
+    input_your_guest_code: Input your guest code
+    register_guest_code: Register guest code
     tab1: 1
     tab2: 2
     tab3: 3
@@ -464,6 +470,7 @@ en:
   guest:
     fail_create: "Create Guest Failed!!"
     success_create: "Create Guest Success"
+    guest_id: "Guest ID: "
   admin_order:
     edit_dish_of_order: Edit dish of order
     add_dish_to_order: Add dish to order

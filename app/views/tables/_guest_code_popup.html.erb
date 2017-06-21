@@ -1,0 +1,29 @@
+<div id="guest-popup" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id="guest-info" class="text-center"><%= t "table.input_your_guest_code" %></h2>
+    </div>
+    <div class="modal-body">
+    <%= form_for :guest, url: guests_path, remote: true do |f| %>
+      <div id="hide-after-guest-info">
+        <%= f.label :phone_num, t("guest.guest_id"), class: "form-label" %>
+        <%= f.text_field :code, id: "code-guest", class: "form-control form-group", required: true %>
+      </div>
+
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <div class="row col-sm-12">
+        <button id="btn-submit-guest-code" class="btn-guest
+          log-btn-2 btn-submit-modal col-sm-6">
+          <%= t "table.submit" %>
+        </button>
+        <button id="register-guest-code" class="close-modal
+          log-btn-2 col-sm-6 text-center">
+          <%= t "table.register_guest_code" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

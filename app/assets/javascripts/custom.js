@@ -78,7 +78,7 @@ $(document).on('click', '#btn-summit-table', function(e) {
     a = 2;
   }
   if(a == 0) {
-    $('#myModal').css('display','block');
+    $('#guest-popup').css('display','block');
   } else if(a == 2) {
     $('#popup1').removeClass('hide');
     $('.alert2').removeClass('hide');
@@ -88,46 +88,70 @@ $(document).on('click', '#btn-summit-table', function(e) {
 
 $(document).on('click','.close', function(){
   $('#myModal').css('display','none');
+  $('#guest-popup').css('display','none');
 });
 
 $(document).on('click','#btn-submit-guest', function() {
-  $(this).css('display','none');
-  $('#btn-submit-order').css('display','block');
-  $('#guest-info').css('display','none');
-  $('#guest-info-confirmed').css('display','block');
-  $('#hide-after-guest-info').css('display','none');
-  $('#show-after-guest-info').removeClass('hide');
+  $(this).hide();
+  $('#btn-submit-order').show();
+  $('#guest-info').hide();
+  $('#hide-after-guest-info').hide();
+  var val_name = $('#name-guest').val();
+  var val_phone = $('#phone-guest').val();
+  var val_email = $('#email-guest').val();
+  $.ajax({
+    type:'POST',
+    url: '/guests',
+    dataType: 'json',
+    data: {
+      guest: {
+        name: val_name,
+        email: val_email,
+        phone_num: val_phone,
+      }
+    }
+  }).success(function(){
+    book_table();
+  });
 });
 
-$(document).on('click', '#btn-submit-order',function(e){
-  e.preventDefault();
-  function makeid()
-  {
-    var text = '';
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+$(document).on('click','#register-guest-code', function() {
+  $('#myModal').css('display','block');
+});
 
-    for( var i=0; i < 5; i++ )
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
-  }
-  var val_cap = makeid();
+function book_table (){
   var val_date = $('#date_field').val();
   var val_time = $('#time_field').val();
   var id_table = $('.btn-table.btn-choose').text();
   $('#myModal').css('display','none');
+  $('#guest-popup').css('display','none');
   $.ajax({
     type:'POST',
     url: '/orders',
     dataType: 'json',
     data: {
-      code: val_cap,
       day: val_date,
       time_in: val_time,
       table_id: id_table
     }
   }).success(function(d){
-    location.replace(d.path1);
+    location.replace(d.path);
+  });
+}
+
+$(document).on('click', '#btn-submit-guest-code',function(){
+  var guest_code = $('#code-guest').val();
+  $.ajax({
+    type:'GET',
+    url: '/guests',
+    dataType: 'json',
+    data: {
+      guest: {
+        code: guest_code,
+      }
+    }
+  }).success(function(){
+    book_table();
   });
 });
 

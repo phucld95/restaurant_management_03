@@ -10,7 +10,7 @@
       order_combo: order_combo, show_total: true %>
   <% end %>
 <% else %>
-  <% if order_dish.present? %>
+  <% if order_dishes.present? %>
     <p class="text-center">
       <%= link_to t("order.empty_item"), dishes_path %>
     </p>
