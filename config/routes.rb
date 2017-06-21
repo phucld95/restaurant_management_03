@@ -13,4 +13,17 @@ Rails.application.routes.draw do
   resources :guests
   resources :order_combos, only: [:create, :update, :destroy]
   resources :combos, only: [:index, :show]
+  namespace :admin do
+    resources :categories do
+      resources :dishes
+    end
+    resources :dishes
+    resources :combos do
+      resources :dishes
+    end
+    resources :orders do
+      resources :order_dishes
+      resources :order_combos
+    end
+  end
 end

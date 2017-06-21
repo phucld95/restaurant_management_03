@@ -6,15 +6,15 @@ class Supports::Combo
   end
 
   def combos
-    @combos
+    @combos[:combo]
   end
 
-  def combos_search params
-    search(params).result.page(params[:page]).per_page Settings.limit
+  def combos_search
+    search.result.page(@combos[:param][:page]).per_page Settings.limit
   end
 
-  def search params
-    search = Combo.ransack params[:q]
+  def search
+    search = Combo.ransack @combos[:param][:q]
     search.sorts = %w(created_at desc name discount) if search.sorts.empty?
     search
   end

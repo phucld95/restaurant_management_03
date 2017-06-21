@@ -467,3 +467,24 @@ en:
   admin_order:
     edit_dish_of_order: Edit dish of order
     add_dish_to_order: Add dish to order
+    search_by_code: Search by code
+    confirmed: Confirmed
+    cancel: Cancel
+    order_confirm: Order informations
+    phone_num: Phone number
+    email: Email
+    table_id: Table ID
+    add_dish: "+ Add dish"
+    add_combo: "+ Add combo"
+    product: Product
+    type: Type
+    original_price: Original Price
+    quantity: Quantity
+    subtotal: Subtotal
+    total_notdiscount: Total (Not Discount)
+    voucher_discount: Voucher discount
+    total: Total
+    success_add: "Added successfully!"
+    success_update: "Updated successfully!"
+    success_delete: "Delete successfully!"
+    something_wrong: "Something wrong!"

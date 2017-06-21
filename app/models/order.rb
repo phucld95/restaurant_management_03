@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :guest
   belongs_to :table, inverse_of: :orders
+  delegate :capacity, to: :table
 
   has_many :order_dishes
   has_many :order_combos
