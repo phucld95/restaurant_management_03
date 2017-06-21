@@ -1,3 +1,4 @@
+/*global WOW:true*/
 var wow = new WOW(
   {
     boxClass: 'wow',

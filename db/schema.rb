@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20170413065341) do
     t.integer  "price"
     t.string   "image"
     t.string   "description"
-    t.boolean  "isAvailable"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_available"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "humen", force: :cascade do |t|

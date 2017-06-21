@@ -1,14 +1,10 @@
 AddModelVirtualAttributeCheck: { }
 AlwaysAddDbIndexCheck: { }
-#CheckSaveReturnValueCheck: { }
-#CheckDestroyReturnValueCheck: { }
 DefaultScopeIsEvilCheck: { }
 DryBundlerInCapistranoCheck: { }
-#HashSyntaxCheck: { }
 IsolateSeedDataCheck: { }
 KeepFindersOnTheirOwnModelCheck: { }
 LawOfDemeterCheck: { }
-#LongLineCheck: { max_line_length: 80 }
 MoveCodeIntoControllerCheck: { }
 MoveCodeIntoHelperCheck: { array_count: 3 }
 MoveCodeIntoModelCheck: { use_count: 2 }
@@ -30,13 +26,17 @@ RemoveUnusedMethodsInControllersCheck: {
   ignored_files: ['app/controllers/admins_controller.rb',
   'app/controllers/sessions_controller.rb',
   'app/controllers/pages_controller.rb',
-  'app/controllers/application_controller.rb']
+  'app/controllers/application_controller.rb'
+  ]
 }
 RemoveUnusedMethodsInHelpersCheck: {
-  except_methods: []
+  except_methods: [],
+  ignored_files: ['app/helpers/session_helper.rb',
+  'app/helpers/application_helper.rb']
 }
 RemoveUnusedMethodsInModelsCheck: {
-  except_methods: []
+  except_methods: [],
+  ignored_files: ['app/models/**']
 }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }
 ReplaceInstanceVariableWithLocalVariableCheck: { }

@@ -5,7 +5,7 @@ class CreateDishes < ActiveRecord::Migration[5.0]
       t.integer :price
       t.string :image
       t.string :description
-      t.boolean :isAvailable
+      t.boolean :is_available
 
       t.timestamps
     end

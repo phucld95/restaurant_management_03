@@ -52,9 +52,9 @@ $(document).on('click', '.delete-combo-in-cart', function() {
 
 $(document).on('click', '.update-dish-quantity-in-cart', function() {
   var order_dish = $(this).data('id');
-  var idQuantityOrderDishField = '#quantity-of-order-dish-' + order_dish
-  var idOrderDishRow = '#order-dish-row-' + order_dish
-  var idOrderDishTotalPrice = ' #order-dish-total-price-' + order_dish
+  var idQuantityOrderDishField = '#quantity-of-order-dish-' + order_dish;
+  var idOrderDishRow = '#order-dish-row-' + order_dish;
+  var idOrderDishTotalPrice = ' #order-dish-total-price-' + order_dish;
   var quantity = $(idQuantityOrderDishField).val();
   var url = '/order_dishes/' + order_dish;
   $.ajax({

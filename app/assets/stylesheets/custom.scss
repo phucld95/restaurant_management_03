@@ -113,7 +113,7 @@ $label-red: #b94a48;
 $label-green: #468847;
 $btn-green: #0a922d;
 $black-overlay: rgba(0, 0, 0, .3);
-$flash-shadow: rgba(34, 34, 34, 0.68);
+$flash-shadow: rgba(34, 34, 34, .68);
 
 .fade-in-left {
   animation: fadeInDown;
@@ -3127,17 +3127,17 @@ a:visited {
 }
 
 .flash-push {
-  opacity: 0;
-  padding: 20px 20px;
-  width: 19.5%;
-  background: white;
-  position: fixed;
-  bottom: 8%;
-  left: 3%;
-  border-radius: 5px;
   animation: fadeInOut 5s ease 1s forwards;
-  z-index: 9999;
+  background: $white;
+  border-radius: 5px;
+  bottom: 8%;
   box-shadow: 2px 6px 11px $flash-shadow;
+  left: 3%;
+  opacity: 0;
+  padding: 20px;
+  position: fixed;
+  width: 19.5%;
+  z-index: 9999;
 }
 
 .navbar-default {
@@ -3150,5 +3150,138 @@ a:visited {
   .badge {
     background-color: $orangered;
     margin: -25px 0 0 -10px;
+
+  }
+}
+
+.form-label-2 {
+  font-size: 18px !important;
+}
+
+.p-form {
+  color: $red;
+  display: inline;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.form-label-3 {
+  color: $black !important;
+  font-size: 20px !important;
+}
+
+.order-item {
+  margin-bottom: 5px;
+
+  span {
+    color: $bitter;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: none;
+  }
+}
+
+.dp-inline {
+  display: inline;
+}
+
+.total-price {
+  padding: 7px 9px;
+}
+
+.width-10 {
+  width: 10px;
+}
+
+.total {
+  padding: 3px 9px;
+}
+
+.order-admin {
+  .items-table {
+    background: $white;
+    border: 0;
+    border-bottom: solid 1px $gray;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  h3 {
+    display: inline-block;
+  }
+
+  h4 {
+    padding-top: -10px;
+  }
+
+  h4 a {
+    color: $red !important;
+    margin-bottom: 20px;
+    margin-left: -10px;
+  }
+
+  .btn,
+  td a {
+    font-size: 18px !important;
+  }
+
+  .items-table tbody,
+  tfoot {
+    color: $black;
+    font-family: Arial,Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  tfoot {
+    background: $gray-light;
+    border-top: solid 1px $gray;
+  }
+
+  .items-table tbody {
+    background: $alabaster;
+  }
+
+  .foot {
+    padding: 5px 9px;
+    text-align: right;
+  }
+
+  .items-table th {
+    background-color: $slide-link;
+    border-color: $slide-link !important;
+    color: $white;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 6px 9px;
+    text-transform: uppercase;
+  }
+
+  td,
+  th {
+    display: table-cell;
+    vertical-align: inherit;
+  }
+
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+  }
+
+  tr:hover {
+    background: $white;
+  }
+
+  .title {
+    border-bottom: 1px solid $alto;
+    color: $slide-link;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    width: 100%;
   }
 }
