@@ -21,6 +21,7 @@ gem "social-share-button"
 gem "will_paginate"
 gem "owlcarousel-rails"
 gem "font-awesome-sass"
+gem "cancancan"
 
 group :development, :test do
   gem "byebug", platform: :mri
