@@ -12,13 +12,16 @@
     <%= render "orders/cart_row", dish: order_dish.dish,
       order_dish: order_dish, show_total: true %>
   <% end %>
-<% elsif @order_combos.any? %>
+<% end %>
+<% if @order_combos.any? %>
   <% @order_combos.each do |order_combo| %>
     <%= render "orders/cart_row_combo", combo: order_combo.combo,
       order_combo: order_combo, show_total: true %>
   <% end %>
 <% else %>
-  <p class="text-center">
-    <%= link_to t("order.empty_item"), dishes_path %>
-  </p>
+  <% if @order_dish.present? %>
+    <p class="text-center">
+      <%= link_to t("order.empty_item"), dishes_path %>
+    </p>
+  <% end %>
 <% end %>

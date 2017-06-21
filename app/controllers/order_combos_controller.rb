@@ -11,16 +11,16 @@ class OrderCombosController < ApplicationController
 
   def update
     @order_combo.update_attributes order_combo_params
-    GetOrderDetails.new().perform
+    GetOrderDetails.new(@order).perform
   end
 
   def destroy
     @order_combo.destroy
-    GetOrderDetails.new().perform
+    GetOrderDetails.new(@order).perform
   end
 
   private
   def order_combo_params
-    params.require(:order_combos).permit :quantity, :id, :combo_id
+    params.require(:order_combo).permit :quantity, :id, :combo_id
   end
 end

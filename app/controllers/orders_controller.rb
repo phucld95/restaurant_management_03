@@ -1,18 +1,5 @@
 class OrdersController < ApplicationController
   def index
-    if params[:order]
-      order = Order.find_by code: params[:order][:code]
-      session[:order_id] = order.id
-      redirect_to order_path
-    end
-  end
-
-  def show
-    @order_dishes = current_order.order_dishes
-    @order_combos = current_order.order_combos
-  end
-
-  def index
     info = params[:order]
     if info
       order = Order.find_by code: info[:code]
@@ -25,6 +12,11 @@ class OrdersController < ApplicationController
         redirect_to orders_path
       end
     end
+  end
+
+  def show
+    @order_dishes = current_order.order_dishes
+    @order_combos = current_order.order_combos
   end
 
   def create
