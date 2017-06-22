@@ -5,7 +5,7 @@
         <div class="uk-panel uk-text-center">
           <h2 class="uk-module-title-alt uk-margin-large-bottom"><%= t "home.our_most" %></h2>
           <div class="carousel">
-            <% @dishes.each do |dish| %>
+            <% dishes.each do |dish| %>
               <div class="uk-width-medium-1-4">
                 <h3 class="uk-margin-small">
                   <%= link_to dish.name, dish_path(dish) %>

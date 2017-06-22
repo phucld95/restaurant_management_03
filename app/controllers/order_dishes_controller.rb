@@ -21,6 +21,6 @@ class OrderDishesController < ApplicationController
 
   private
   def order_dish_params
-    params.require(:order_dish).permit :quantity, :id, :dish_id
+    params.require(:order_dish).permit :quantity, :dish_id
   end
 end
