@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="col-sm-8 col-sm-offset-2">
   <div class="search-form">
-    <%= search_form_for @search, remote: true do |f| %>
+    <%= search_form_for dishes_support.search, remote: true do |f| %>
       <%= t ".sort" %>
-      <%= sort_link @search, :name, {}, {remote: true, method: :get} %>
-      <%= sort_link @search, :price, {}, {remote: true, method: :get} %>
+      <%= sort_link dishes_support.search, :name, {}, {remote: true, method: :get} %>
+      <%= sort_link dishes_support.search, :price, {}, {remote: true, method: :get} %>
       &nbsp;&nbsp;&nbsp;&nbsp;<%= t ".check" %>
       <%= f.select :isAvailable_true, [[t(".available"), 1]],
         {include_blank: t(".all"),
@@ -24,15 +24,15 @@
     <% end %>
   </div>
   <div id="pagination" class="apple-pagination">
-    <%= paginate @dishes, remote: true %>
+    <%= paginate dishes_support.dishes_search, remote: true %>
   </div>
   <div id="counter" class="pagination_count text-center counter">
-    <%= page_entries_info @dishes, remote: true %>
+    <%= page_entries_info dishes_support.dishes_search, remote: true %>
   </div>
 </div>
 <br>
 <div class="col-sm-12">
-  <% @dishes.each do |dish| %>
+  <% dishes_support.dishes_search.each do |dish| %>
     <div class="items col-xs-12 col-sm-4">
       <div class="item-inner">
         <div class="item">

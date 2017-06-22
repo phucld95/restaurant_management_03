@@ -149,7 +149,7 @@
     </div>
     <div class="main-content col-sm-12" id="cart-content">
       <div class="shopping-cart" id="cart-content-list">
-        <%= render "ordering_cart" %>
+        <%= render "ordering_cart", order_dishes: @order_dishes, order_combos: @order_combos %>
       </div>
     </div>
   </div>

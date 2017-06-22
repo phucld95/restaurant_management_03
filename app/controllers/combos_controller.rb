@@ -2,7 +2,7 @@ class CombosController < ApplicationController
   before_action :find_combo, only: :show
 
   def index
-    @combo_support = Supports::Combo.new Combo.all
+    @combo_support = Supports::Combo.new combo: Combo.all, param: params
   end
 
   def show

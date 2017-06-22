@@ -2,9 +2,7 @@ class DishesController < ApplicationController
   before_action :find_dish, except: :index
 
   def index
-    @search = Dish.ransack params[:q]
-    @search.sorts = %w(name price) if @search.sorts.empty?
-    @dishes = @search.result.page(params[:page]).per_page Settings.limit
+    @dishes_support = Supports::Dish.new dish: Dish.all, param: params
   end
 
   def show

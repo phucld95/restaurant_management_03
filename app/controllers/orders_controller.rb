@@ -23,15 +23,15 @@ class OrdersController < ApplicationController
     params[:guest_id] = session[:guest]["id"]
     session.delete :order_id if current_order.code.present?
     if order_params[:table_id].blank?
-      session.delete :order_id
       redirect_to cart_path
-    else current_order.id.blank?
+    elsif current_order.id.blank?
+      byebug
       @order = current_order
       @order.save
       session[:order_id] = @order.id
       current_order.update_attributes order_params
       flash[:success] = t "flash.order.create_success"
-      render json: {path1: order_path(@order).to_s}
+      render json: {path1: cart_path}
     end
   end
 
