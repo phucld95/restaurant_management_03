@@ -1,0 +1,32 @@
+<section class="section admin-site">
+  <br><br>
+  <div class="col-sm-12 col-md-offset-1 col-md-10">
+    <h1><br><%= t "admin_order.order_combo" %></h1><br>
+    <div class="bloc col-xs-12">
+      <div class="form-dish">
+        <%= form_for [:admin, order, order_combo] do |f| %>
+          <div class="col-xs-12">
+            <%= f.label :combo, t("admin.combos.new.name"), class: "form-label-2" %>
+            <% if order_combo.combo.present? %>
+              <p class="p-form"><%= order_combo.combo.name %></p>
+            <% else %>
+              <%= f.select :combo_id, combos, {include_blank: false,
+                selected: :combo_id}, class: "btn btn-default" %>
+            <% end %>
+          </div>
+          <div class="col-xs-12">
+            <%= f.label :quantity, t("order.quantity"), class: "form-label-2" %>
+            <%= f.number_field :quantity, class: "form-control", min: 1 %>
+          </div>
+          <div class="col-xs-12 text-center">
+            <% if order_combo.new_record? %>
+              <%= f.submit t "admin.combos.index.add_combo_button", class: "btn btn-primary"%>
+            <% else %>
+              <%= f.submit t "admin.combos.show.edit_combo_button", class: "btn btn-success"%>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

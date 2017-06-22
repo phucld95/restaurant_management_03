@@ -1,0 +1,12 @@
+<section class="section admin-site">
+  <br><br>
+  <div class="col-sm-12 col-xs-12">
+    <h1><%= t ".title" %></h1>
+    <br>
+    <div class="bloc col-xs-12">
+      <div id="orders" class="search-form col-xs-12">
+        <%= render "order", order: @orders_support, tables: @tables %>
+      </div>
+    </div>
+  </div>
+</section>

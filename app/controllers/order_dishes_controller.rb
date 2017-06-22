@@ -1,6 +1,6 @@
 class OrderDishesController < ApplicationController
   include LoadOrder
-  before_action :load_order, only: [:create, :update, :destroy]
+  before_action :load_data, only: [:create, :update, :destroy]
   before_action :find_dish, only: [:update, :destroy]
 
   def create

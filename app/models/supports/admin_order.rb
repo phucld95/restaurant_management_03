@@ -5,7 +5,7 @@ class Supports::AdminOrder
     @data = arg
   end
 
-  def get_data
+  def load_data
     @data
   end
 end

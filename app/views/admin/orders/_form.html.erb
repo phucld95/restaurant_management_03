@@ -1,0 +1,37 @@
+<%= form_for [:admin, order] do |f| %>
+  <%= f.label :code, t(".code"), class:"form-label-3" %>
+  <%= f.text_field :code, class: "form-control" %>
+
+  <%= f.fields_for :guest do |guest| %>
+    <%= guest.label :name, t(".guest_name"), class:"form-label-3" %>
+    <%= guest.text_field :name, class: "form-control" %>
+  <% end %>
+
+  <%= f.fields_for :table do |table| %>
+    <%= table.label :capacity, t(".capacity"), class:"form-label-3" %>
+    <%= table.text_field :capacity, class: "form-control" %>
+  <% end %>
+
+  <%= f.label :discount, t(".discount"), class:"form-label-3" %>
+  <%= f.number_field :discount, class: "form-control", min: 0  %>
+
+  <%= f.label :date, t(".date"), class:"form-label-3" %><br>
+  <%= f.text_field :day, class: "form-control datepicker" %><br>
+
+  <%= f.label :time_in, t(".time_in"), class:"form-label-3" %><br>
+  <%= f.select :time_in,[[t("select.em"), 1], [t("select.lm"), 2],
+    [t("select.ea"), 3], [t("select.la"), 4],
+    [t("select.ee"), 5], [t("select.le"), 6]],
+    {include_blank: t("reserve.time")}, id:"time_field",
+    class: "form-control", required: true %>
+  <br>
+
+  <%= f.label :is_confirm, t(".status"), class:"form-label-3" %>
+  <%= f.radio_button :is_confirm, "true", checked: true %> <%= t(".approved") %>
+  <%= f.radio_button :is_confirm, "false" %> <%= t(".canceled") %>
+
+  <br><br><br>
+  <%= f.submit t("button.clear"), type: :reset,
+    class: "btn btn-danger pull-right" %>
+  <%= f.submit class: "btn btn-primary pull-right" %>
+<% end %>
