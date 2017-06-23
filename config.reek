@@ -8,3 +8,5 @@ FeatureEnvy:
   enabled: false
 InstanceVariableAssumption:
   enabled: false
+UtilityFunction:
+  enabled: false

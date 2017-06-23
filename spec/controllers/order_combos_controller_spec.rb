@@ -8,7 +8,7 @@ describe OrderCombosController do
   describe "GET #create" do
     it "add combo into order" do
       post :create, params:
-        {order_combos: {quantity: 1, combo_id: Combo.first.id}},
+        {order_combo: {quantity: 1, combo_id: Combo.first.id}},
         format: :json
       expect(response).to have_http_status 204
     end

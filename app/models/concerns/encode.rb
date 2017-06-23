@@ -17,8 +17,6 @@ module Encode
 
   private
   def generate_code
-    unless self.code
-      self.update_attributes code: encode(self.id)
-    end
+    self.update_attributes code: encode(self.id) unless self.code
   end
 end

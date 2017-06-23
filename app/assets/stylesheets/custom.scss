@@ -1515,7 +1515,6 @@ $flash-shadow: rgba(34, 34, 34, .68);
 }
 
 .uk-grid {
-  display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: -10px;
@@ -3141,16 +3140,16 @@ a:visited {
 }
 
 .navbar-default {
-  padding: 5px;
+  padding: 5px 5px 0;
 
   .fa-shopping-cart {
-    font-size: 2em;
+    font-size: 1.5em;
+    margin-top: -.5vh;
   }
 
   .badge {
     background-color: $orangered;
     margin: -25px 0 0 -10px;
-
   }
 }
 
@@ -3284,4 +3283,8 @@ a:visited {
     text-transform: uppercase;
     width: 100%;
   }
+}
+
+.fa-times {
+  color: $white;
 }

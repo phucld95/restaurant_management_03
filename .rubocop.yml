@@ -448,7 +448,7 @@ Style/TrailingCommaInLiteral:
 # TrivialAccessors doesn't require exact name matches and doesn't allow
 # predicated methods by default.
 Style/TrivialAccessors:
-  ExactNameMatch: false
+  ExactNameMatch: true
   AllowPredicates: false
   # Allows trivial writers that don't end in an equal sign. e.g.
   #

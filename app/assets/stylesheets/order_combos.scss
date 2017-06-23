@@ -213,6 +213,17 @@ p {
   width: 0;
 }
 
+.tracking-order-process .bs-wizard>.bs-wizard-step.complete>.progress>.progress-bar2 {
+  width: 100%;
+}
+
+.tracking-order-process .bs-wizard>.bs-wizard-step>.progress>.progress-bar2 {
+  background: $brick;
+  box-shadow: none;
+  transition: none;
+  width: 0;
+}
+
 .progress-bar {
   background-color: $bondi-blue;
   box-shadow: inset 0 -1px 0 $black-opacity;

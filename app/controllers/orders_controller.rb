@@ -15,7 +15,13 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order_dishes = current_order.order_dishes
+    order_dish = current_order.order_dishes
+    @order_dishes =
+      if order_dish.blank?
+        nil
+      else
+        order_dish
+      end
     @order_combos = current_order.order_combos
   end
 

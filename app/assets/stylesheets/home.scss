@@ -7,6 +7,8 @@ $gray: rgba(255, 255, 255, .15);
 $black: rgba(0, 0, 0, .2);
 $black2: #000;
 $blue: #156c8e;
+$mexican-red: #a41f35;
+$cardinal: #d11f25;
 
 .uk-grid > * > :last-child {
   margin-bottom: 0;
@@ -125,7 +127,8 @@ h6 {
 
 .home-combos {
   background-color: $black2;
-  min-height: 400px;
+  min-height: 95vh;
+  padding-top: 3vh;
 
   h2 {
     color: $white;
@@ -351,4 +354,14 @@ div {
   color: $blue;
   cursor: pointer;
   text-decoration: none;
+}
+
+.carousel2 {
+  margin-left: 5.5%;
+  margin-top: 3vh;
+}
+
+.bs-wizard-cross {
+  background: $cardinal !important;
+  border-color: $mexican-red !important;
 }

@@ -1,8 +1,8 @@
-<%= search_form_for @combo_support.search(params), remote: true do |f| %>
+<%= search_form_for combo_support.search, remote: true do |f| %>
   <%= t ".sort" %>
-  <%= sort_link @combo_support.search(params),
+  <%= sort_link combo_support.search,
     :name, {}, {remote: true, method: :get} %>
-  <%= sort_link @combo_support.search(params),
+  <%= sort_link combo_support.search,
     :discount, {}, {remote: true, method: :get} %>
   <div class="input-group input-group-lg">
     <div class="form-group has-feedback has-clear input-group-lg">

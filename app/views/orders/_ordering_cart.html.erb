@@ -1,18 +1,18 @@
-<% if order_dishes.any? %>
-  <% order_dishes.each do |order_dish| %>
-    <%= render "orders/cart_row", dish: order_dish.dish,
-      order_dish: order_dish, show_total: true %>
+<% if order_dishes %>
+  <% if order_dishes.any? %>
+    <% order_dishes.each do |order_dish| %>
+      <%= render "orders/cart_row", dish: order_dish.dish,
+        order_dish: order_dish, show_total: true %>
+    <% end %>
   <% end %>
-<% end %>
-<% if order_combos.any? %>
-  <% order_combos.each do |order_combo| %>
-    <%= render "orders/cart_row_combo", combo: order_combo.combo,
-      order_combo: order_combo, show_total: true %>
+  <% if order_combos.any? %>
+    <% order_combos.each do |order_combo| %>
+      <%= render "orders/cart_row_combo", combo: order_combo.combo,
+        order_combo: order_combo, show_total: true %>
+    <% end %>
   <% end %>
 <% else %>
-  <% if order_dishes.present? %>
-    <p class="text-center">
-      <%= link_to t("order.empty_item"), dishes_path %>
-    </p>
-  <% end %>
+  <p class="text-center">
+    <%= link_to t("order.empty_item"), dishes_path %>
+  </p>
 <% end %>
