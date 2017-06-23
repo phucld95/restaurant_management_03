@@ -1,6 +1,4 @@
 class GuestsController < ApplicationController
-  include FindGuest
-
   def new
     @guest = Guest.new
   end
@@ -27,5 +25,13 @@ class GuestsController < ApplicationController
   private
   def guest_params
     params.require(:guest).permit :name, :email, :phone_num, :code
+  end
+
+  def find_guest code
+    @guest = Guest.find_by code: code
+
+    unless @guest
+      flash[:danger] = t "guest.not_found"
+    end
   end
 end
