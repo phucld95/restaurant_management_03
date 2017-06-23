@@ -37,6 +37,7 @@ class OrdersController < ApplicationController
       session[:order_id] = @order.id
       @order.update_attributes order_params
       flash[:success] = t "flash.order.create_success"
+      UserCreateOrderNotifierMailer.send_email(@order).deliver
       render json: {path: cart_path}
     end
   end

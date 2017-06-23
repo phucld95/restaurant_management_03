@@ -273,6 +273,10 @@ en:
         canceled: Pending
         no_table: Not order
         action: Action
+        success: You have created an order
+        thank: Thanks for order and have a great day!
+        order_info: Order information
+        code: Code
   button:
     view: Details
     add: Add
