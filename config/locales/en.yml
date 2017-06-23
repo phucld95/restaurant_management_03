@@ -471,6 +471,7 @@ en:
     fail_create: "Create Guest Failed!!"
     success_create: "Create Guest Success"
     guest_id: "Guest ID: "
+    not_found: "Find not found!"
   admin_order:
     edit_dish_of_order: Edit dish of order
     add_dish_to_order: Add dish to order
