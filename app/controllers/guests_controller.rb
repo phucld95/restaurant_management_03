@@ -29,9 +29,6 @@ class GuestsController < ApplicationController
 
   def find_guest code
     @guest = Guest.find_by code: code
-
-    unless @guest
-      flash[:danger] = t "guest.not_found"
-    end
+    flash[:danger] = t "guest.not_found" unless @guest
   end
 end

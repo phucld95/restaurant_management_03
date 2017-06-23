@@ -1,40 +1,39 @@
 <section class="section">
   <br><br><br>
   <div class="bloc col-sm-12 col-md-10 col-md-offset-1">
-    <% if current_order.id %>
-      <div class="tracking-order-process">
-        <% if current_order.table_id %>
-          <p class="order-id order-code">
-            <%= t "order.order_code" %>
-            <span><%= current_order.code %></span>
-          </p>
-        <% end %>
-        <p class="status">
-          <%= t "order.order_status" %>
-          <% if current_order.table_id %>
-            <% if current_order.is_confirm? %>
-              <span>
-                <%= t "order.approver" %>
-              </span>
-              <p>
-                <%= t "order.your_order_has_approved" %>
-              </p>
-            <% else %>
-              <span>
-                <%= t "order.order_completed" %>
-              </span>
-              <p>
-                <%= t "order.thank_for_order" %>
-              </p>
-            <% end %>
-          <% else %>
+    <div class="tracking-order-process">
+      <% if current_order.code %>
+        <p class="order-id order-code">
+          <%= t "order.order_code" %>
+          <span><%= current_order.code %></span>
+        </p>
+      <% end %>
+      <p class="status">
+        <%= t "order.order_status" %>
+        <% if current_order.code %>
+          <% if current_order.is_confirm? %>
             <span>
-              <%= t "order.ready_to_order" %>
+              <%= t "order.approver" %>
             </span>
             <p>
-              <%= t "order.you_arent_order_table" %>
+              <%= t "order.your_order_has_approved" %>
+            </p>
+          <% else %>
+            <span>
+              <%= t "order.order_completed" %>
+            </span>
+            <p>
+              <%= t "order.thank_for_order" %>
             </p>
           <% end %>
+        <% else %>
+          <span>
+            <%= t "order.ready_to_order" %>
+          </span>
+          <p>
+            <%= t "order.you_arent_order_table" %>
+          </p>
+        <% end %>
         </p>
         <br>
         <div class="row bs-wizard">
@@ -64,7 +63,8 @@
               <div class="progress">
                 <div class="progress-bar2"></div>
               </div>
-              <span class="bs-wizard-dot"></span>
+              <span class="bs-wizard-dot bs-wizard-cross">
+              <i class="fa fa-times" aria-hidden="true"></i></span>
             <% end %>
           </div>
           <div class="col-lg-4 col-sm-4 bs-wizard-step complete">
@@ -82,68 +82,64 @@
               <div class="progress">
                 <div class="progress-bar2"></div>
               </div>
-              <span class="bs-wizard-dot"></span>
+              <span class="bs-wizard-dot bs-wizard-cross">
+              <i class="fa fa-times" aria-hidden="true"></i></span>
             <% end %>
           </div>
         </div>
+        </div>
+    <br>
+    <% if current_order.table.present? %>
+      <div class="text-center user-info">
+        <p class="description">
+          <%= t "order.your_informations" %>
+        </p>
+        <p class="info-item">
+          <%= t "order.name" %>
+          <span><%= current_order.guest.name %></span>
+        </p>
+        <p class="info-item">
+          <%= t "order.email" %>
+          <span><%= current_order.guest.email %></span>
+        </p>
+        <p class="info-item">
+          <%= t "order.phone" %>
+          <span><%= current_order.guest.phone_num %></span>
+        </p>
       </div>
       <br>
-      <% if current_order.table.present? %>
-        <div class="text-center user-info">
-          <p class="description">
-            <%= t "order.your_informations" %>
-          </p>
-          <p class="info-item">
-            <%= t "order.name" %>
-            <span><%= current_order.guest.name %></span>
-          </p>
-          <p class="info-item">
-            <%= t "order.email" %>
-            <span><%= current_order.guest.email %></span>
-          </p>
-          <p class="info-item">
-            <%= t "order.phone" %>
-            <span><%= current_order.guest.phone_num %></span>
-          </p>
-          <p class="info-item">
-            <%= t "order.guest_id" %>
-            <span><%= current_order.guest.code %></span>
-          </p>
-        </div>
-        <br>
-        <div class="text-center">
-          <p class="description">
-            <%= t "order.order_infomations" %>
-          </p>
-          <p class="info-item">
-            <%= t "order.table_number" %>
-            <span class="table-id"><%= current_order.table.id %></span>
-          </p>
-          <p class="info-item">
-            <%= t "order.date" %>
-            <span class="table-id"><%= current_order.day %></span>
-          </p>
-          <p class="info-item">Time:
-            <span class="table-id">
-              <% if current_order.time_in == 1 %><%= t "select.em" %><% end %>
-              <% if current_order.time_in == 2 %><%= t "select.lm" %><% end %>
-              <% if current_order.time_in == 3 %><%= t "select.ea" %><% end %>
-              <% if current_order.time_in == 4 %><%= t "select.la" %><% end %>
-              <% if current_order.time_in == 5 %><%= t "select.ee" %><% end %>
-              <% if current_order.time_in == 6 %><%= t "select.le" %><% end %>
-            </span>
-          </p>
-        </div>
-        <br>
-        <div class="text-center go-to-book">
-          <h4 class="inline">
-            <%= t "order.want_to_book" %>
-          </h4>
-          <%= form_for :order, url: orders_path, method: :post do |f| %>
-            <%= f.submit t("order.create_new_order"), class: "btn btn-info inline" %>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="text-center">
+        <p class="description">
+          <%= t "order.order_infomations" %>
+        </p>
+        <p class="info-item">
+          <%= t "order.table_number" %>
+          <span class="table-id"><%= current_order.table.id %></span>
+        </p>
+        <p class="info-item">
+          <%= t "order.date" %>
+          <span class="table-id"><%= current_order.day %></span>
+        </p>
+        <p class="info-item">Time:
+          <span class="table-id">
+            <% if current_order.time_in == 1 %><%= t "select.em" %><% end %>
+            <% if current_order.time_in == 2 %><%= t "select.lm" %><% end %>
+            <% if current_order.time_in == 3 %><%= t "select.ea" %><% end %>
+            <% if current_order.time_in == 4 %><%= t "select.la" %><% end %>
+            <% if current_order.time_in == 5 %><%= t "select.ee" %><% end %>
+            <% if current_order.time_in == 6 %><%= t "select.le" %><% end %>
+          </span>
+        </p>
+      </div>
+      <br>
+      <div class="text-center go-to-book">
+        <h4 class="inline">
+          <%= t "order.want_to_book" %>
+        </h4>
+        <%= form_for :order, url: orders_path, method: :post do |f| %>
+          <%= f.submit t("order.create_new_order"), class: "btn btn-info inline" %>
+        <% end %>
+      </div>
     <% end %>
     <br>
     <div class="text-center">
