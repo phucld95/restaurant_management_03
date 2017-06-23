@@ -5,6 +5,7 @@ class Admin::OrdersController < ApplicationController
 
   def index
     @orders_support = Supports::Order.new order: Order.all, param: params
+    @tables = Table.all
   end
 
   def show
