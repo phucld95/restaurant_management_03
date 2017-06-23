@@ -4,6 +4,8 @@ class Admin::OrderCombosController < ApplicationController
   before_action :load_support_combos
   before_action :find_order_combo
 
+  load_and_authorize_resource
+
   def new
     @order_combo = OrderCombo.new
   end

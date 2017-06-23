@@ -1,7 +1,8 @@
 class Admin::OrdersController < ApplicationController
   before_action :logged_in_admin
-  before_action :find_order, only: [:show, :edit, :update, :destroy]
   before_action :check_for_cancel
+
+  load_and_authorize_resource
 
   def index
     @orders_support = Supports::Order.new order: Order.all, param: params
@@ -50,11 +51,6 @@ class Admin::OrdersController < ApplicationController
   end
 
   private
-  def find_order
-    @order = Order.find_by id: params[:id]
-    t "admin_order.something_wrong" unless @order
-  end
-
   def order_params
     params.require(:order).permit :code, :discount, :day, :time_in, :is_confirm,
       guest_attributes: [:id, :name], table_attributes: [:id, :capacity]
