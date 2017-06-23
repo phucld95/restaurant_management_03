@@ -7,6 +7,7 @@ class CreateHumen < ActiveRecord::Migration[5.0]
       t.string :phone_num
       t.string :password_digest
       t.integer :admin_role
+      t.string :code
 
       t.timestamps
     end

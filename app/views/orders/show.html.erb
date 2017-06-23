@@ -3,7 +3,7 @@
   <div class="bloc col-sm-12 col-md-10 col-md-offset-1">
     <% if current_order.id %>
       <div class="tracking-order-process">
-        <% if current_order.code %>
+        <% if current_order.table_id %>
           <p class="order-id order-code">
             <%= t "order.order_code" %>
             <span><%= current_order.code %></span>
@@ -11,7 +11,7 @@
         <% end %>
         <p class="status">
           <%= t "order.order_status" %>
-          <% if current_order.code %>
+          <% if current_order.table_id %>
             <% if current_order.is_confirm? %>
               <span>
                 <%= t "order.approver" %>
@@ -55,7 +55,7 @@
                 <%= t "order.table_booked" %>
               </p>
             </div>
-            <% if current_order.code.present? %>
+            <% if current_order.table_id.present? %>
               <div class="progress">
                 <div class="progress-bar"></div>
               </div>
@@ -104,6 +104,10 @@
           <p class="info-item">
             <%= t "order.phone" %>
             <span><%= current_order.guest.phone_num %></span>
+          </p>
+          <p class="info-item">
+            <%= t "order.guest_id" %>
+            <span><%= current_order.guest.code %></span>
           </p>
         </div>
         <br>

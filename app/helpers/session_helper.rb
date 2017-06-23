@@ -16,7 +16,7 @@ module SessionHelper
     end
   end
 
-  def current_guest guest
+  def update_guest guest
     session[:guest] = guest
   end
 

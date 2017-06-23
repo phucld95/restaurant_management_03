@@ -1,10 +1,13 @@
 class Order < ApplicationRecord
+  include Encode
   belongs_to :guest
   belongs_to :table, inverse_of: :orders
   delegate :capacity, to: :table
 
   has_many :order_dishes
   has_many :order_combos
+
+  after_save :generate_code
 
   accepts_nested_attributes_for :guest
   accepts_nested_attributes_for :table
