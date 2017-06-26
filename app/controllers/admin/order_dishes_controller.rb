@@ -4,6 +4,8 @@ class Admin::OrderDishesController < ApplicationController
   before_action :load_support_dishes
   before_action :find_order_dish
 
+  load_and_authorize_resource
+
   def new
     @order_dish = OrderDish.new
   end

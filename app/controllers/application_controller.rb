@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     @current_ability ||= Ability.new current_admin
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to :back, flash: {danger: exception.message}
+  end
+
   private
   def logged_in_admin
     unless logged_in?
