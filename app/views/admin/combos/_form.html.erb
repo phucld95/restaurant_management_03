@@ -1,0 +1,31 @@
+<%= form_for [:admin, combo] do |f| %>
+  <%= f.label :name, t("admin.combos.edit.name"), class:"form-label" %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :description, t("admin.combos.edit.description"), class:"form-label" %>
+  <%= f.text_area :description, class: "form-control" %>
+  <%= f.label :discount, t("admin.combos.edit.discount"), class:"form-label" %>
+  <%= f.number_field :discount, class: "form-control", min: 0 %>
+  <%= f.label :image, t("admin.combos.edit.image"), class:"form-label" %>
+  <%= f.text_area :image, class: "form-control" %>
+  <%= f.label :dishes, t(".dishes"), class:"form-label" %>
+  <div class="col-xs-12">
+  <% dishes.each do |dish| %>
+    <div class="col-xs-6 col-sm-4 choose">
+      <%= check_box_tag "combo[dish_ids][]", dish.id,
+        combo.dishes.include?(dish) %>
+      <%= label_tag :dish_ids, dish.name %>
+    </div>
+  <% end %>
+  </div>
+  <div class="col-xs-12 text-center">
+  <% if combo.new_record? %>
+    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit t("button.clear"), type: :reset,
+        class: "btn btn-danger" %>
+  <% else %>
+    <%= f.submit class: "btn btn-success" %>
+    <%= f.submit t("button.clear"), type: :reset,
+      class: "btn btn-danger" %>
+  <% end %>
+  </div>
+<% end %>

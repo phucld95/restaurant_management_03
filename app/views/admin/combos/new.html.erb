@@ -1,0 +1,17 @@
+<section class="section admin-site">
+  <br>
+  <br>
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <h1><%= t ".title" %></h1><br>
+    <% flash.each do |key, value| %>
+      <div class="flash-message <%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+    <div class="bloc col-xs-12">
+      <div class="form-dish">
+        <%= render "form", combo: @combo, dishes: @dishes %>
+      </div>
+    </div>
+  </div>
+</section>

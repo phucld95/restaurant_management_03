@@ -158,7 +158,7 @@ en:
     combos:
       index:
         title: Combos manager
-        add_combo_button: Add Combo
+        add_combo_button: "Create new Combo"
       new:
         title: Create combo
         name: "Combo name:"
@@ -179,6 +179,10 @@ en:
       edit:
         title: Edit combo
         delete_combo_button: Delete this combo
+        description: "Description"
+        name: "Name"
+        discount: "Discount"
+        image: "Image"
       form:
         create_combo_button: Create combo
         update_combo_button: Update combo
