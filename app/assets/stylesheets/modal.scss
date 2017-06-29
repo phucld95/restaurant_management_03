@@ -1,0 +1,67 @@
+$white: #fff;
+$blue: rgba(205, 255, 228, .94);
+$black: #000;
+$green: #7bb790;
+$email: rgba(229, 253, 255, .86);
+$shadow: rgba(0, 0, 0, .2);
+
+.registration-form {
+  background: transparent;
+  left: 50%;
+  position: absolute;
+  top: 15%;
+  transform: translate(-50%, 0%);
+  width: 400px;
+}
+
+.registration-form header {
+  background: $white;
+  border-radius: 15px 15px 0 0;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 4;
+}
+
+.registration-form form {
+  position: relative;
+}
+
+.registration-form .input-section {
+  background: $blue;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 0 100px $shadow;
+  display: flex;
+  height: 75px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  transform: translate(-50%, 0);
+  transition: all .2s ease-in;
+  width: 100%;
+  z-index: 2;
+
+  input {
+    background: $email;
+    border: 0 solid $white;
+    text-align: center;
+    width: 80%;
+  }
+}
+
+.animated-button span {
+  background: transparent;
+  color: $green;
+  font-size: 3em;
+  left: 28%;
+  position: relative;
+  top: 13%;
+  width: 20%;
+}
+
+.animated-button {
+  background: transparent;
+  border: 0;
+  color: $blue;
+  font-weight: 100;
+  width: 20%;
+}

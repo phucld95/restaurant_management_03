@@ -1,6 +1,6 @@
 module Encode
-  ALPHABET = "A0CDEYZnopqFGHIJabcdefghijklmKLMNO01234
-    PQRSBTUVWXYZnopqrstuvwxyz123456789"
+  ALPHABET = "A0CDEYZnopqFGHIJabcdefghijklmKLMNO01234" \
+    "PQRSBTUVWXYZnopqrstuvwxyz123456789"
   BASE = ALPHABET.length
   INIT = BASE**4
 

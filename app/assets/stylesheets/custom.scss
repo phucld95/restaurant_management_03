@@ -92,7 +92,9 @@ $btn-color1: #41deb6;
 $form-control-color: #23ffd0;
 $outside-ground: rgba(168, 129, 110, .82);
 $inside-ground: rgba(199, 194, 155, .93);
-$modal: #5cb85c;
+$modal-start: #ffafbd;
+$modal-end: #ffc3a0;
+$modal: linear-gradient(to right, $modal-start, $modal-end);
 $modal-border: #888;
 $modal-background: rgba(0, 0, 0, .4);
 $menu-grid: #5a2149;
@@ -114,6 +116,15 @@ $label-green: #468847;
 $btn-green: #0a922d;
 $black-overlay: rgba(0, 0, 0, .3);
 $flash-shadow: rgba(34, 34, 34, .68);
+$input: rgba(228, 223, 222, .6);
+$gradient1: #cf7f62;
+$gradient2: #f46058;
+$gradient3: #f3114b;
+$gradient4: #ff7e5f;
+$gradient5: #feb47b;
+$gradient-hover: linear-gradient(141deg, $gradient1 0%,
+  $gradient2 25%, $gradient3 75%);
+$gradient: linear-gradient(to right, $gradient4, $gradient5);
 
 .fade-in-left {
   animation: fadeInDown;
@@ -2916,19 +2927,21 @@ a:visited {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 
 .modal-content {
-  animation-duration: .4s;
+  animation-duration: 1s;
   animation-name: animatetop;
-  background-color: $white;
-  border: 1px solid $modal-border;
-  box-shadow: 0 4px 8px 0 $black-opacity, 0 6px 20px 0 $black-opacity;
+  background-color: transparent;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 3px 6px 18px 3px $black-opacity, 0 6px 20px 0 $black-opacity;
   margin: auto;
   padding: 0;
   position: relative;
-  width: 80%;
+  transition: all ease 1s;
+  width: 70%;
 }
 
 @keyframes animatetop {
@@ -2958,17 +2971,24 @@ a:visited {
 }
 
 .modal-header {
-  background-color: $modal;
+  background: $modal;
+  border-radius: 10px 10px 0 0;
   color: $white;
-  padding: 2px 16px;
+  padding: 25px 15px 0;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  background: $white;
+  margin-bottom: -2px;
+  padding: 0;
+  transition: all ease 1s;
+}
 
 .modal-footer {
-  background-color: $modal;
+  background: $modal;
+  border-radius: 0 0 10px 10px;
   color: $white;
-  padding: 2px 16px;
+  padding: 15px;
 }
 
 .close-modal {
@@ -3185,6 +3205,7 @@ a:visited {
 }
 
 .total-price {
+  color: $caribbean-green;
   padding: 7px 9px;
 }
 
@@ -3215,7 +3236,6 @@ a:visited {
 
   h4 a {
     color: $red !important;
-    margin-bottom: 20px;
     margin-left: -10px;
   }
 
@@ -3244,6 +3264,12 @@ a:visited {
   .foot {
     padding: 5px 9px;
     text-align: right;
+  }
+
+  .head {
+    color: $cardinal;
+    padding: 5px 9px;
+    text-align: left;
   }
 
   .items-table th {
@@ -3287,4 +3313,106 @@ a:visited {
 
 .fa-times {
   color: $white;
+}
+
+.bs-wizard-step {
+  .fa-times {
+    color: $white;
+  }
+}
+
+.btn-voucher {
+  background: $meadow !important;
+  border-radius: 30px;
+  box-shadow: 2px 3px 12px $black-overlay;
+  color: $white;
+  padding: 3px 5px;
+  text-align: center !important;
+}
+
+.btn-voucher:hover {
+  background: $caribbean-green !important;
+  box-shadow: 2px 4px 25px $black-overlay;
+}
+
+.modal-part {
+  background: transparent;
+  min-height: 80px;
+}
+
+.modal-left {
+  box-shadow: 6px 2px 14px 0 $black-opacity;
+  z-index: 3;
+}
+
+.modal-right {
+  box-shadow: 5px 2px 14px 0 $black-opacity;
+  height: 100%;
+  z-index: 3;
+}
+
+.row-padding {
+  padding: 0 15px !important;
+}
+
+.input-form {
+  background: $input;
+  border: 0;
+  height: 100%;
+  margin: -5px 0 10px;
+  text-align: center;
+}
+
+.input-form:focus {
+  border: 0;
+}
+
+.btn-check {
+  color: $shamrock;
+  font-size: 2.5em;
+  padding: 15px 5px;
+}
+
+.btn-check:hover {
+  color: $caribbean-green;
+}
+
+.discount-code-input {
+  font-family: Khand;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.text-row {
+  margin: 0;
+}
+
+.modal-sm {
+  width: 40vw;
+}
+
+.discount-result {
+  animation: fadeInLeft ease-out .5s;
+  margin-bottom: 0;
+  padding: 10px 10px 10px 20px !important;
+  text-align: center;
+}
+
+.choose-code-btn {
+  animation: fadeInRight ease-out .5s;
+  background: $gradient;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 6px 2px 14px 0 $black-opacity;
+  color: $white;
+  font-family: Khand;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px 0 8px !important;
+  text-transform: uppercase;
+}
+
+.choose-code-btn:hover {
+  background: $gradient-hover;
+  box-shadow: 6px 2px 15px 2px $black-opacity;
 }

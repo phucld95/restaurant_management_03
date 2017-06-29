@@ -10,6 +10,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def show
+    @support = Supports::Order.new discount: params[:discount]
   end
 
   def new

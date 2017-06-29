@@ -9,6 +9,10 @@ class OrderCombo < ApplicationRecord
 
   before_save :finalize
 
+  def original_price
+    price * 100 / (100 - combo.discount)
+  end
+
   def total_price
     price * quantity
   end
