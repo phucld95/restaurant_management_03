@@ -506,3 +506,14 @@ en:
     something_wrong: "Something wrong!"
     order_dish: Order Dish
     order_dish: Order Combo
+    original_price: Original Price
+    voucher_add: Add Voucher
+    discount_code: Discount Code
+    input_code: Input your discount code
+    your_code: Your CODE
+  discount:
+    reenter: "Please re-enter correct code!"
+    used_code: "This code has been used!"
+    discount: "This voucher has"
+    discount2: "% off"
+    choose_code: "Choose this code"

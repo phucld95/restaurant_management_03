@@ -23,15 +23,15 @@ class OrdersController < ApplicationController
         order_dish
       end
     @order_combos = current_order.order_combos
+    @order_dishes = nil if @order_dishes.blank?
   end
 
   def create
-    code = current_order.code
     params[:guest_id] = session[:guest]["id"]
-    session.delete :order_id if code.present?
-    if order_params[:table_id].blank?
+    if current_order.table_id
+      session.delete :order_id if current_order.code.present?
       redirect_to cart_path
-    elsif code.blank?
+    else
       @order = current_order
       @order.save
       session[:order_id] = @order.id

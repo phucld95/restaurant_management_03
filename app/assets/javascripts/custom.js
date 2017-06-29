@@ -178,3 +178,19 @@ $(document).ready(function(){
     easing: 'linear'
   });
 });
+
+$(document).on('click','.btn-voucher',function(){
+  $('#myModal2').show();
+});
+
+$(document).on('click','#check-discount-code', function(){
+  $('#check-discount-code').removeClass('fa-paper-plane');
+  $('#check-discount-code').addClass('fa-spin fa-circle-o-notch');
+  var data = $('#discount-code-input').val();
+  $('#discount-render').load(document.URL + '?discount=' + data +
+    ' #discount-row');
+  setTimeout(function(){
+    $('#check-discount-code').addClass('fa-paper-plane');
+    $('#check-discount-code').removeClass('fa-spin fa-circle-o-notch');
+  }, 500);
+});

@@ -110,7 +110,7 @@
     <tbody>
       <% if order.orders_search.any? %>
         <% order.orders_search.each do |order| %>
-          <% if order.code != nil %>
+          <% if order.day %>
             <tr>
               <td><%= link_to order.code, admin_order_path(order) %></td>
               <td><%= order.day.in_time_zone(

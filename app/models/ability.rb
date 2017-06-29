@@ -9,15 +9,15 @@ class Ability
 
     can :view, :all
 
+    can :read, :all
+
     case user.admin_role
     when "administrator"
       can :manage, :all
     when "waiter"
-      can :modify, [OrderDish, OrderCombo]
-    when "receptionist"
       can :modify, [Order, OrderDish, OrderCombo]
-    else
-      can :update, [OrderDish, OrderCombo]
+    when "receptionist"
+      can :modify, [Order, OrderDish, OrderCombo, Guest]
     end
   end
 end

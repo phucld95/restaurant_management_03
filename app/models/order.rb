@@ -19,4 +19,12 @@ class Order < ApplicationRecord
       (order_combo.quantity * order_combo.price) : 0}.sum
     total_dishes_price + total_combos_price
   end
+
+  def original_price
+    total_dishes_price = order_dishes.map{|order_dish| order_dish.valid? ?
+      (order_dish.quantity * order_dish.price) : 0}.sum
+    total_combos_price = order_combos.map{|order_combo| order_combo.valid? ?
+      (order_combo.quantity * order_combo.original_price) : 0}.sum
+    total_dishes_price + total_combos_price
+  end
 end
