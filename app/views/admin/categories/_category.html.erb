@@ -1,0 +1,59 @@
+<%= search_form_for [:admin, categories.search], remote: true, method: :get do |f| %>
+  <div class="input-group input-group-lg col-sm-12">
+    <div class="col-sm-2 add">
+      <%= link_to t("admin.dishes.dish.add_dish_button"), new_admin_category_path,
+        class: "btn btn-primary" %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_field :name_or_description_cont, class: "pj-form-field w180",
+        placeholder: t(".input_keyword"), id: "searchinput" %>
+      <span id="searchclear" class="form-control-clear glyphicon
+        glyphicon-remove form-control-feedback">
+      </span>
+      <%= f.submit t(".search"), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div id="pagination" class="apple-pagination">
+    <%= paginate categories.categories_search, remote: true %>
+  </div>
+  <table class="default-dg-table">
+    <tbody>
+    <tr class="dg_tr" id="di_row_">
+      <th class="default_dg_th dg-left dg-nowrap dg1">
+        <%= sort_link categories.search, :id,
+          t(".order"), {}, {remote: true, method: :get} %>
+      </th>
+      <th class="default_dg_th dg-center dg-nowrap dg3">
+        <%= sort_link categories.search, :name,
+          {}, {remote: true, method: :get} %>
+      </th>
+      <th class="default_dg_th dg-center dg-nowrap dg4" colspan="2">
+        <%= t "Opition" %>
+      </th>
+    </tr>
+    <% if categories.categories_search.any? %>
+      <% categories.categories_search.each do |category| %>
+        <tr class="dg_tr" id="di_row_0">
+          <td class="default_dg_td dg-left dg-nowrap dg1">
+            <%= category.id %>
+          </td>
+          <td class="default_dg_td dg-left dg-nowrap dg2">
+            <%= link_to category.name, admin_category_path(category) %>
+          </td>
+          <td class="default_dg_td dg-right dg-nowrap dg3">
+            <%= link_to edit_admin_category_path(category) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end %>
+          </td>
+          <td class="default_dg_td dg-left dg-nowrap img dg4">
+            <%= link_to admin_category_path(category), method: :delete,
+              data: {confirm: t("button.delete_warning")} do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

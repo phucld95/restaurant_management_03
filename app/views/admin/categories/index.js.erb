@@ -1,0 +1,3 @@
+$('#category').html('<%= j render "category", categories: @categories%>');
+$('#pagination').html('<%= j paginate(@categories.categories_search,
+  remote: true).to_s %>');
