@@ -1,0 +1,24 @@
+<tr class="new-dish-row">
+  <td class="total">
+    <strong>
+     <%= select_tag "new_order_dish",
+        options_for_select(support.load_data[:dish_select]),
+        {class: "select-in-order", include_blank: t("order_detail.new_dish")} %>
+    </strong>
+  </td>
+  <td class="total"><%= t "dishes.show.name" %></td>
+  <td class="total" id="dish-original-price">
+  </td>
+  <td class="total" id="dish-quantity">
+    <%= number_field_tag "new_order_dish_quantity", 1,
+      {class: "quantity-in-order", min: 1, include_blank: 1} %>
+  </td>
+  <td class="total" id="dish-discount"></td>
+  <td class="total" id="dish-total-price">
+  </td>
+  <td class="total width-10 text-center" id="dish-save">
+  </td>
+  <td class="total width-10 text-center" id="dish-delete">
+    <i class="fa fa-lg fa-times fa-big"></i>
+  </td>
+</tr>

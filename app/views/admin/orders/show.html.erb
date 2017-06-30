@@ -7,14 +7,6 @@
       <%= render "order_info", order: @order %>
       <br><br>
       <h3 class="title order-item"><%= t "order.order_items" %> <span></span></h3>
-      <h4 class="dp-inline">
-        <%= link_to t("admin_order.add_dish"), new_admin_order_order_dish_path(@order),
-          class:"btn btn-link" %>
-      </h4>
-      <h4 class="dp-inline">
-        <%= link_to t("admin_order.add_combo"), new_admin_order_order_combo_path(@order),
-          class:"btn btn-link" %>
-      </h4>
       <br><br>
       <table class="items-table">
         <%= render "order_item", order: @order %>
@@ -34,9 +26,9 @@
           </td>
         </tr>
         <tr>
-          <td colspan="4" class="foot"></td>
-          <td colspan="1" class="foot">
-            <div class="btn-voucher">
+          <td colspan="3" class="foot"></td>
+          <td colspan="2" class="foot">
+            <div class="btn btn-add-dish btn-voucher">
               <%= t "admin_order.voucher_add" %>
             </div>
           </td>
@@ -50,7 +42,7 @@
           <td class="total-price" colspan="6" align="right">
             <strong><%= t "admin_order.total" %></strong>
           </td>
-          <td class="total-price" colspan="3" id="order-total">
+          <td class="total-price" colspan="3" id="order-total" align="right">
             <strong>
               <%= number_to_currency (@order.subtotal * (100 -
                 @order.discount))/100 %>
@@ -62,4 +54,5 @@
     </div>
   </div>
   <%= render "modal", order: @order, discount: @support %>
+  <%= render "modal_save_order" %>
 </section>

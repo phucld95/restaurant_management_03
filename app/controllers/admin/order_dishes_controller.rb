@@ -8,6 +8,10 @@ class Admin::OrderDishesController < ApplicationController
 
   def new
     @order_dish = OrderDish.new
+    respond_to do |format|
+      format.html{render "_order_dish_item", layout: false,
+        locals: {support: @support}}
+    end
   end
 
   def create
