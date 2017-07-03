@@ -517,3 +517,7 @@ en:
     discount: "This voucher has"
     discount2: "% off"
     choose_code: "Choose this code"
+  order_detail:
+    new_dish: Choose a dish
+    new_combo: Choose a combo
+    save: Save

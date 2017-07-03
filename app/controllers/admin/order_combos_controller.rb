@@ -8,6 +8,10 @@ class Admin::OrderCombosController < ApplicationController
 
   def new
     @order_combo = OrderCombo.new
+    respond_to do |format|
+      format.html{render "_order_combo_item", layout: false,
+        locals: {support: @support}}
+    end
   end
 
   def create

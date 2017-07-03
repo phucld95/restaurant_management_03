@@ -3263,7 +3263,7 @@ a:visited {
 
   .foot {
     padding: 5px 9px;
-    text-align: right;
+    text-align: right !important;
   }
 
   .head {
@@ -3296,7 +3296,7 @@ a:visited {
   }
 
   tr:hover {
-    background: $white;
+    background: $order-color;
   }
 
   .title {
@@ -3319,20 +3319,6 @@ a:visited {
   .fa-times {
     color: $white;
   }
-}
-
-.btn-voucher {
-  background: $meadow !important;
-  border-radius: 30px;
-  box-shadow: 2px 3px 12px $black-overlay;
-  color: $white;
-  padding: 3px 5px;
-  text-align: center !important;
-}
-
-.btn-voucher:hover {
-  background: $caribbean-green !important;
-  box-shadow: 2px 4px 25px $black-overlay;
 }
 
 .modal-part {
@@ -3415,4 +3401,43 @@ a:visited {
 .choose-code-btn:hover {
   background: $gradient-hover;
   box-shadow: 6px 2px 15px 2px $black-opacity;
+}
+
+.select-in-order {
+  margin-left: -5px;
+  max-width: 285px;
+}
+
+.new-dish-row {
+  background: $modal-end;
+}
+
+.fa-big {
+  font-size: 1.1em !important;
+}
+
+.fa-huge {
+  font-size: 1.7em !important;
+}
+
+.quantity-in-order {
+  width: 80px;
+}
+
+.btn-add-dish {
+  background: $modal;
+  margin: 5px;
+  padding: 3px 5px 0;
+}
+
+.btn-add-dish:hover {
+  background: $gradient-hover;
+}
+
+.btn-add-dish-row:hover {
+  background: transparent;
+}
+
+.special-row {
+  background: $cornflower-blue;
 }
