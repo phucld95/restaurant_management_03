@@ -2,7 +2,7 @@
   <td class="total">
     <strong>
       <%= select_tag "new_order_combo",
-        options_for_select(support.load_data[:combo_select]),
+        options_for_select(support.load_data[:combo]),
         {class: "select-in-order",
         include_blank: t("order_detail.new_combo")} %>
     </strong>

@@ -1,0 +1,26 @@
+<div id="edit-discount-modal" class="modal">
+  <div class="modal-content modal-sm">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 class="text-center"><%= t ".edit_discount" %></h2>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form">
+        <%= form_for :discount do |f| %>
+          <%= f.hidden_field :id, id: "discount_id_field" %>
+          <%= f.label :discount %>
+          <%= f.number_field :discount,
+            class: "form-control-discount", id: "discount_field" %>
+          <%= f.label :status %>
+          <%= f.select :status, ([t("select.available"), t("select.used")]),
+           class: "form-control-discount", id: "discount_status" %>
+        <% end %>
+        <div class="btn btn-add-dish btn-save-modal">
+          <%= t ".save" %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>

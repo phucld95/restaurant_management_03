@@ -1,0 +1,4 @@
+$('#discount-pagination').html('<%= j paginate(@support.discounts_search,
+  remote: true).to_s %>');
+$('.default-dg-table').html('<%= j render "item_discount_code",
+  support: @support %>');

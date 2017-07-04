@@ -80,6 +80,7 @@ en:
       cant_find_order: Can't find any order with this infomation!
       find_order: Found order successfully!
   admin:
+    discount: Discount
     combo: Combo
     menu: Menu
     category: Category
@@ -432,6 +433,8 @@ en:
     tm: Middle of room
     ts: Side of room
     to: Outside
+    available: Available
+    used: Used
   reserve:
     quantity: Please choose capacity
     table: Please select prefer table
@@ -517,6 +520,9 @@ en:
     discount: "This voucher has"
     discount2: "% off"
     choose_code: "Choose this code"
+    all: "All discount"
+    input: "Input code"
+    generate: "Generate new code"
   order_detail:
     new_dish: Choose a dish
     new_combo: Choose a combo
