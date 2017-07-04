@@ -1,0 +1,26 @@
+<div class="panel-heading" role="tab" id="headingOne">
+  <h4 class="panel-title">
+    <%= link_to "#collapseOne", role: "button",
+      "data-toggle" => "collapse", "data-parent" => "#accordion",
+      "aria-expanded" => true do %>
+      <%= t "table.already_code" %>
+    <% end %>
+  </h4>
+</div>
+<div id="collapseOne" class="panel-collapse collapse in"
+  role="tabpanel" aria-labelledby="headingOne">
+  <div class="panel-body">
+    <%= form_for :guest, url: guests_path, remote: true do |f| %>
+      <div id="hide-after-guest-info">
+        <%= f.label :phone_num, t("guest.guest_id"), class: "form-label" %>
+        <%= f.text_field :code, id: "code-guest",
+          class: "form-control form-group", required: true %>
+      </div>
+    <% end %>
+    <hr>
+    <input type="button" name="previous" data-prev="1" data-current="2"
+      class="previous action-button mg-auto" value="Previous" />
+    <input type="button" name="next" step="4"
+      class="action-button mg-auto next" value="<%= t "table.confirm" %>" />
+  </div>
+</div>

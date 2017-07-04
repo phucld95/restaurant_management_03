@@ -1,0 +1,47 @@
+<div class="panel-heading" role="tab" id="headingTwo">
+  <h4 class="panel-title">
+    <%= link_to "#collapseTwo", role: "button",
+      "data-toggle" => "collapse", "data-parent" => "#accordion",
+      "aria-expanded" => false, class: "collapsed" do %>
+      <%= t "table.new_customer" %>
+    <% end %>
+  </h4>
+</div>
+<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+     aria-labelledby="headingTwo">
+  <div class="panel-body">
+    <%= form_for guest, url: guests_path, remote: true do |f| %>
+      <div id="hide-after-guest-info">
+        <div class="row">
+          <div class="col-sm-4">
+            <%= f.label :name, class: "form-label" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :name, id: "name-guest",
+              class: "form-control form-group", required: true %>
+          </div>
+          <div class="col-sm-4">
+            <%= f.label :email, class: "form-label" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :email, id: "email-guest",
+              class: "form-control form-group", required: true %>
+          </div>
+          <div class="col-sm-4">
+            <%= f.label :phone_num, t("admin_order.phone_num"),
+              class: "form-label" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :phone_num, id: "phone-guest",
+            class: "form-control form-group", required: true %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+    <input type="button" name="previous" data-prev="1" data-current="2"
+      class="previous action-button mg-auto" value="Previous" />
+    <input type="button" name="next" step="5"
+      class="action-button mg-auto next" value="<%= t "table.confirm" %>" />
+  </div>
+</div>

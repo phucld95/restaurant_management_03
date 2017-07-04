@@ -1,11 +1,17 @@
 <%= form_for :table, id: "table-form", remote: true do |f| %>
-  <br>
-  <div>
-    <%= f.label :capacity_gteq, t("admin.orders.form.capacity"), class: "form-label" %>
-    <%= f.text_field :capacity_gteq, class: "form-control form-group",
-      id:"capacity_field", required: true, placeholder: t("reserve.quantity") %>
-  </div>
   <div class="row">
+    <div class="col-sm-12">
+      <div class="alert alert-danger alert-dismissable fade in alert-1 hide">
+        <%= t "table.alert1" %>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <%= f.label :capacity_gteq, t("admin.orders.form.capacity"),
+        class: "form-label" %>
+      <%= f.number_field :capacity_gteq, class: "form-control form-group",
+        id:"capacity_field", required: true,
+        placeholder: t("reserve.quantity") %>
+    </div>
     <div class="col-sm-4">
       <%= f.label :orders_day_eq, t("admin.orders.form.pickdate"), class: "form-label" %>
       <%= f.text_field :orders_day_not_eq, class: "form-control datepicker2",
@@ -19,12 +25,11 @@
         {include_blank: t("reserve.time")}, id:"time_field",
         class: "form-control", required: true %>
     </div>
-  </div>
-  <br>
-  <div id="btn-find-table" class="log-btn btn-find-table text-center col-sm-10">
-    <%= t "reserve.find" %></div>
-  <div id="btn-submit-table">
-    <%= f.submit t("reserve.submit"), class: "log-btn btn-summit-table", id: "btn-summit-table" %>
+    <div class="col-sm-12  mg-center">
+      <hr>
+      <input type="button" name="next" data-next="1" data-current="0"
+        class="next action-button" value="Next" step="1"/>
+    </div>
   </div>
 <% end %>
 

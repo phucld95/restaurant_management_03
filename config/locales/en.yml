@@ -441,8 +441,12 @@ en:
     find: Find Table
     table: Please choose table
   table:
+    confirm: Confirm
+    pick_time: Pick time
+    book_table: Book table
     reservation: Reservation
     available_table: Available Table
+    confirm_reservation: Confirm reservation
     avail: Table is Available
     unavail: Table is Unavailable
     alert: Alert
@@ -456,6 +460,8 @@ en:
     modal_mes6: Confirm Order
     modal_mes7: Cancel
     submit: Submit
+    already_code: You already have the customer code
+    new_customer: I'm a new customer
     input_your_guest_code: Input your guest code
     register_guest_code: Register guest code
     tab1: 1

@@ -125,6 +125,18 @@ $gradient5: #feb47b;
 $gradient-hover: linear-gradient(141deg, $gradient1 0%,
   $gradient2 25%, $gradient3 75%);
 $gradient: linear-gradient(to right, $gradient4, $gradient5);
+$table-color-1: rgba(196, 102, 0, .6);
+$table-color-2: rgba(155, 89, 182, .6);
+$table-color-3: rgba(0, 0, 0, .4);
+$ccc: #ccc;
+$input-table: #2c3e50;
+$table-button: #27ae60;
+$mau6: #666;
+$mau3: #333;
+
+body {
+  overflow-x: hidden;
+}
 
 .fade-in-left {
   animation: fadeInDown;
@@ -340,7 +352,6 @@ $gradient: linear-gradient(to right, $gradient4, $gradient5);
 #login {
   background: url("http://i.imgur.com/g8AiwIu.jpg") no-repeat;
   background-size: cover;
-  filter: blur(.4px);
   min-height: 100vh;
 }
 
@@ -422,23 +433,15 @@ $gradient: linear-gradient(to right, $gradient4, $gradient5);
 }
 
 .alert {
-  color: $red;
   display: none;
-  float: left;
-  font-size: 12px;
 }
 
-.error,
-.alert,
-.notice,
-.info,
-.danger {
-  background: $blossom;
-  border: 1px solid $dark-blossom;
-  border-radius: 5px;
-  color: $brick;
-  font-size: 15px;
-  padding: 8px;
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 .success {
@@ -457,7 +460,6 @@ $gradient: linear-gradient(to right, $gradient4, $gradient5);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(.4px);
   height: 100vh;
 }
 
@@ -2313,7 +2315,6 @@ $gradient: linear-gradient(to right, $gradient4, $gradient5);
   box-orient: horizontal;
   box-sizing: border-box;
   display: flex;
-  filter: blur(.4px);
   flex-direction: row;
 }
 
@@ -2594,7 +2595,6 @@ a:visited {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(.4px);
   min-height: 100vh;
 }
 
@@ -2711,8 +2711,7 @@ a:visited {
 }
 
 .h1style {
-  margin-bottom: 5px;
-  margin-top: 10px;
+  margin: 5px;
 }
 
 .h2style {
@@ -2727,7 +2726,6 @@ a:visited {
 
 .form-control {
   background: $white;
-  border: 1px solid $golden;
   border-radius: 4px;
   color: $gray-dark;
   height: 35px;
@@ -3440,4 +3438,142 @@ a:visited {
 
 .special-row {
   background: $cornflower-blue;
+}
+.table-section {
+  background: linear-gradient($table-color-1, $table-color-2);
+  font-family: montserrat, arial, verdana, serif;
+  min-height: 100vh;
+  padding-top: 60px;
+
+  .msform {
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+  }
+
+  .mg-center {
+    text-align: center;
+  }
+
+  .block:not(:first-of-type) {
+    display: none;
+  }
+
+  .box {
+    background: $white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px $table-color-3;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid $ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: $input-table;
+    font-size: 13px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .font-mont {
+    color: $white;
+    font-family: montserrat;
+    font-size: 28px;
+  }
+
+  .action-button {
+    background: $table-button;
+    border: 0 none;
+    border-radius: 1px;
+    color: $white;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 5px;
+    padding: 10px 5px;
+    width: 100px;
+  }
+
+  .action-button:hover,
+  .action-button:focus {
+    box-shadow: 0 0 0 2px $white, 0 0 0 3px $table-button;
+  }
+
+  .fs-title {
+    color: $input-table;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .fs-subtitle {
+    color: $mau6;
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+
+  .heading-small {
+    margin-top: 100px;
+  }
+
+  #progressbar {
+    counter-reset: step;
+    left: -100px;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    top: 45vh;
+    transform: rotate(90deg);
+    width: 80vh;
+    z-index: 10000;
+
+    li {
+      color: $black;
+      float: left;
+      font-size: 9px;
+      list-style-type: none;
+      position: relative;
+      text-transform: uppercase;
+      width: 33.33%;
+
+      .active::before,
+      .active::after {
+        background: $table-button;
+        color: $white;
+      }
+    }
+
+    li::after {
+      background: $white;
+      content: "";
+      height: 2px;
+      left: -25%;
+      position: absolute;
+      top: 9px;
+      width: 50%;
+    }
+
+    li::before {
+      background: $white;
+      border-radius: 3px;
+      color: $mau3;
+      content: counter(step);
+      counter-increment: step;
+      display: block;
+      font-size: 10px;
+      line-height: 20px;
+      margin: 0 auto 5px;
+      transform: rotate(-90deg);
+      width: 20px;
+    }
+
+    li:first-child::after {
+      content: none;
+    }
+  }
 }
