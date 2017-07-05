@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170623065341) do
   create_table "discount_codes", force: :cascade do |t|
     t.string   "code"
     t.integer  "discount"
-    t.integer  "status"
+    t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

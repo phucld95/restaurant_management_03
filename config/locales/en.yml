@@ -108,6 +108,14 @@ en:
     update: Update profile
     change_pass: Change Password
     search: Search
+    user: Users
+    email: Email
+    date_created: Date create
+    role: Role
+    admin_management: Admin account management
+    change_role: Change roles for employees
+    roles: Please chose role
+    current_role: Current role
     dishes:
       index:
         title: Dishes manager
@@ -533,3 +541,10 @@ en:
     new_dish: Choose a dish
     new_combo: Choose a combo
     save: Save
+  admin_role:
+    administrator: Administrator
+    chef: Chef
+    waiter: Waiter
+    receptionist: Receptionist
+  admin_users:
+    new_admin: Create new admin

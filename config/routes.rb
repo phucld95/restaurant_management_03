@@ -26,5 +26,6 @@ Rails.application.routes.draw do
       resources :order_combos
     end
     resources :discount_codes
+    resources :users
   end
 end

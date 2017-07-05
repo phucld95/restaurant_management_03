@@ -1,12 +1,24 @@
 class Admin < Human
   enum admin_role: [:administrator, :chef, :waiter, :receptionist]
 
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+
   after_initialize :set_default_admin_role, if: :new_record?
   before_save :downcase_email
 
-  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
-
   has_secure_password
+
+  class << self
+    def roles_select
+      admin_roles.map do |role, _|
+        [I18n.t("admin_role.#{role}"), role]
+      end
+    end
+  end
+
+  def role
+    I18n.t "admin_role.#{admin_role}"
+  end
 
   private
   def downcase_email

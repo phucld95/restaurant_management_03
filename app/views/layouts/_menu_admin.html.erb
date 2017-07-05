@@ -1,27 +1,42 @@
-<ul class="nav navbar-nav navbar-right animated fadeInDown wow" data-wow-delay="0.1s">
-  <li><%= link_to t("admin.combo"), admin_combos_path, class: "smoothScroll animated fadeInDown wow",
+<ul class="nav navbar-nav navbar-right animated fadeInDown wow"
+  data-wow-delay="0.1s">
+  <li><%= link_to t("admin.combo"), admin_combos_path,
+    class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.1s", method: :get %></li>
   <li><%= link_to t("admin.category"), admin_categories_path,
     class: "smoothScroll animated fadeInLeft wow",
     "data-wow-delay": "0.15s", method: :get %></li>
-  <li><%= link_to t("admin.dish"), "#dish", class: "smoothScroll animated fadeInLeft wow",
-    "data-wow-delay": "0.2s", method: :get %></li>
-  <li><%= link_to t("admin.dish"), "#dish", class: "smoothScroll animated fadeInDown wow",
+  <li><%= link_to t("admin.dish"), "#dish",
+    class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.27s", method: :get %></li>
-  <li><%= link_to t("admin.order"), admin_orders_path, class: "smoothScroll animated fadeInDown wow",
+  <li><%= link_to t("admin.order"), admin_orders_path,
+    class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.35s", method: :get %></li>
-  <li><%= link_to t("admin.discount"), admin_discount_codes_path, class: "smoothScroll animated fadeInDown wow",
+  <li><%= link_to t("admin.discount"), admin_discount_codes_path,
+    class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.42s", method: :get %></li>
-  <li><%= link_to t("admin.bill"), "#bill", class: "smoothScroll animated fadeInDown wow",
+  <li><%= link_to t("admin.bill"), "#bill",
+    class: "smoothScroll animated fadeInDown wow",
     "data-wow-delay": "0.47s", method: :get %></li>
+  <li><%= link_to t("admin.order"), admin_orders_path,
+    class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.25s", method: :get %></li>
+  <li><%= link_to t("admin.bill"), "#bill",
+    class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.3s", method: :get %></li>
+  <li><%= link_to t("admin.user"), admin_users_path,
+    class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.3s", method: :get %></li>
   <li class="dpdwn">
     <%= link_to t("admin.profile"), admin_path,
       class: "smoothScroll animated fadeInDown wow",
       "data-wow-delay": "0.56s", method: :get %>
     <ul class="nav">
-      <li><%= link_to t("admin.setting"), edit_admin_path, class: "smoothScroll animated fadeInRight wow",
+      <li><%= link_to t("admin.setting"), edit_admin_path,
+        class: "smoothScroll animated fadeInRight wow",
         "data-wow-delay": ".05s", method: :get %></li>
-      <li><%= link_to t("admin.logout"), logout_path, class: "smoothScroll animated fadeInRight wow",
+      <li><%= link_to t("admin.logout"), logout_path,
+        class: "smoothScroll animated fadeInRight wow",
         "data-wow-delay": ".15s", method: :delete %></li>
       </ul>
   </li>

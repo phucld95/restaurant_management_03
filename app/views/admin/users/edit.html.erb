@@ -1,0 +1,20 @@
+<section class="section admin-site">
+  <br><br>
+  <div class="col-sm-12 col-xs-12">
+    <h1><%= t "admin.admin_management" %></h1>
+    <br>
+    <div class="bloc col-xs-6 col-xs-offset-3">
+      <h4><%= t "admin.change_role" %>: <%= @user.email %></h4>
+      <h4><%= t "admin.current_role" %>:
+        <span class="badge"><%= @user.role %></span>
+      </h4>
+      <%= form_for @user, url: admin_user_path(@user), method: :put do |f| %>
+        <%= f.select :admin_role, Admin.roles_select,
+          {include_blank: t("admin.roles")}, id:"role_field",
+          class: "form-control", required: true %>
+        <hr>
+        <%= f.button t("admin.update"), class: "btn btn-primary center-block" %>
+      <% end %>
+    </div>
+  </div>
+</section>
