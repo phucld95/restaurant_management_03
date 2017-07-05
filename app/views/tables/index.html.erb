@@ -1,58 +1,42 @@
-<section class="default-section">
-  <div class="transparent-div" id="div-find-table">
-    <h1 class="stylish-heading h1style"><%= t "table.reservation" %></h1>
-    <%= render "reservation" %>
-  </div>
-  <div class="transparent-div3" id="div-show-result" class="div-show-result">
-    <h2 class="stylish-heading h1style"><%= t "table.available_table" %></h2>
-    <%= render "map" %>
-    <div class="btn-guide btn-maru btn-left2 btn-bottom3 text-center">
-      <%= t "table.avail" %></div>
-    <div class="btn-guide btn-batsu btn-right2 btn-bottom3 text-center">
-      <%= t "table.unavail" %></div>
-  </div>
-  <div id="popup1" class="overlay hide">
-    <div class="popup">
-      <h2><%= t "table.alert" %></h2>
-      <a id="close-alert" class="close">&times;</a>
-      <div class="content alert1">
-        <%= t "table.alert1" %>
+<section class="table-section">
+  <div class="container-fluid vertical-center">
+    <ul id="progressbar">
+      <li class="active"><%= t "table.pick_time" %></li>
+      <li><%= t "table.book_table" %></li>
+      <li><%= t "table.confirm" %></li>
+    </ul>
+    <div class="row block" id="block-0">
+      <div class="col-sm-12">
+        <h2 class="stylish-heading h1style font-mont heading-small">
+          <%= t "table.reservation" %>
+        </h2>
+        <br>
       </div>
-      <div class="content alert2">
-        <%= t "table.alert2" %>
+      <div class="col-sm-4 col-sm-offset-4 box">
+        <%= render "reservation" %>
       </div>
     </div>
-  </div>
-  <%= render "guest_code_popup" %>
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2 id="guest-info" class="text-center"><%= t "table.modal_mes1" %></h2>
-        <h2 id="guest-info-confirmed" class="guest-info-confirmed text-center"><%= t "table.modal_mes2" %></h2>
+    <div class="row block" id="block-1">
+      <div class="col-sm-12">
+        <h2 class="stylish-heading h1style font-mont">
+          <%= t "table.available_table" %>
+        </h2>
       </div>
-      <div class="modal-body">
-        <%= form_for @guest, url: guests_path, remote: true do |f| %>
-          <div id="hide-after-guest-info">
-            <%= f.label :name, class: "form-label" %>
-            <%= f.text_field :name, id: "name-guest", class: "form-control form-group", required: true %>
-            <%= f.label :email, class: "form-label" %>
-            <%= f.text_field :email, id: "email-guest", class: "form-control form-group", required: true %>
-            <%= f.label :phone_num, "phone number", class: "form-label" %>
-            <%= f.text_field :phone_num, id: "phone-guest", class: "form-control form-group", required: true %>
-          </div>
-        <% end %>
-        <div class="row col-sm-12">
-          <button id="btn-submit-guest" class="btn-guest
-            log-btn-2 btn-submit-modal col-sm-6">
-            <%= t "table.modal_mes5" %>
-          </button>
-          <div class="close-modal log-btn-2 col-sm-6 text-center">
-            <%= t "table.modal_mes7" %>
-          </div>
+      <div class="col-sm-6 box col-sm-offset-3">
+        <div class="alert alert-danger alert-dismissable fade in alert-2 hide">
+          <%= t "table.alert2" %>
         </div>
+        <%= render "tables/map" %>
       </div>
-      <div class="modal-footer">
+    </div>
+    <div class="row block" id="block-2">
+      <div class="col-sm-12">
+        <h2 class="stylish-heading h1style font-mont heading-small">
+          <%= t "table.confirm" %>
+        </h2>
+      </div>
+      <div class="col-sm-6 box col-sm-offset-3">
+        <%= render "tables/confirm", guest: @guest %>
       </div>
     </div>
   </div>
