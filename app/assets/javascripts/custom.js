@@ -59,7 +59,7 @@ $(document).ready(function(){
 
 function book_table (){
   var val_date = $('#date_field').val();
-  var val_time = $('#time_field').val();
+  var val_time = $('#timepicker').val();
   var id_table = $('.btn-table.btn-choose').text();
   $('#myModal').css('display','none');
   $('#guest-popup').css('display','none');
@@ -157,7 +157,7 @@ $(document).ready(function(){
     if(step == 1){
       var val_cap = $('#capacity_field').val();
       var val_date = $('#date_field').val();
-      var val_time = $('#time_field').val();
+      var val_time = $('#timepicker').val();
       var val_id = $('#chosen_table_value').val();
 
       if(val_cap == '' || val_date == '' || val_time == ''){
@@ -262,4 +262,14 @@ $(document).on('click','#check-discount-code', function(){
     $('#check-discount-code').addClass('fa-paper-plane');
     $('#check-discount-code').removeClass('fa-spin fa-circle-o-notch');
   }, 500);
+});
+
+$(document).ready(function(){
+  $('input.timepicker').timepicker({
+    timeFormat: 'HH:mm',
+    minHour: 10,
+    maxHour: 20,
+    maxMinutes: 30,
+    interval: 15
+  });
 });

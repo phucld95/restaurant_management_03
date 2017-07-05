@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623065341) do
+ActiveRecord::Schema.define(version: 20170706061547) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20170623065341) do
     t.integer  "table_id"
     t.string   "code"
     t.date     "day"
-    t.integer  "time_in"
+    t.string   "time_in"
     t.boolean  "is_confirm", default: false
     t.integer  "discount",   default: 0
     t.datetime "created_at",                 null: false

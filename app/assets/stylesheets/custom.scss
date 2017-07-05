@@ -2724,13 +2724,14 @@ a:visited {
   margin-top: -10px;
 }
 
-.form-control {
+.form-control2 {
   background: $white;
   border-radius: 4px;
   color: $gray-dark;
-  height: 35px;
+  height: 50px;
+  margin-right: 10px;
   padding: 5px 7px 5px 5px;
-  width: 100%;
+  width: 100% !important;
 }
 
 .form-control:focus {
@@ -3483,8 +3484,8 @@ a:visited {
 
   .font-mont {
     color: $white;
-    font-family: montserrat;
-    font-size: 28px;
+    font-family: Khand;
+    font-size: 3em;
   }
 
   .action-button {
@@ -3579,7 +3580,6 @@ a:visited {
   }
 }
 
-
 .admin-dish-table {
   tr a {
     font-size: 18px !important;
@@ -3642,4 +3642,26 @@ a:visited {
   .btn {
     margin-top: -30px;
   }
+}
+
+.parallax-div {
+  background: url("https://goo.gl/Rt5Wfb");
+  background-size: cover;
+}
+
+.parallax-text {
+  background: $white;
+  color: $gray-dark;
+  font-family: "Love Ya Like A Sister";
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 40px;
+  margin-top: -13px;
+  mix-blend-mode: lighten;
+  overflow: hidden;
+}
+
+.row-form {
+  margin: 0;
+  padding: 0;
 }

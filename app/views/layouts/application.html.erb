@@ -30,8 +30,14 @@
             <span class="icon icon-bar"></span>
             <span class="icon icon-bar"></span>
           </button>
-          <%= link_to t("brand"), root_path , id: "brand",
-            class: "navbar-brand faded", method: :get %>
+          <%= link_to root_path, id: "brand",
+            class: "navbar-brand faded", method: :get do %>
+            <div class="parallax-div">
+              <h1 class="parallax-text">
+                <%= t("brand") %>
+              </h1>
+            </div>
+          <% end %>
         </div>
         <div class="collapse navbar-collapse">
           <% if logged_in? %>
