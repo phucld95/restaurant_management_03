@@ -1,0 +1,130 @@
+$modal-start: #eea1af;
+$modal-end: #ffc8a3;
+$modal: linear-gradient(to right, $modal-start, $modal-end);
+$white: #fff;
+$white2: #ffe6e6;
+$background-part: linear-gradient(to left top, $white2, $white);
+$gray: rgba(96, 96, 96, .87);
+$gray-light: rgba(171, 171, 171, .85);
+$gradient4: #ff7e5f;
+$gradient5: #feb47b;
+$gradient: linear-gradient(to right, $gradient4, $gradient5);
+$silver-light: rgba(212, 212, 212, .71);
+
+.discount-screen {
+  background: $modal;
+  min-height: 100vh;
+}
+
+.view-part {
+  background: $background-part;
+  border-radius: 5px;
+  box-shadow: 1px 3px 13px 2px $gray;
+  height: 80%;
+  margin: 100px 20px 20px;
+}
+
+.search-discount {
+  width: 80%;
+}
+
+.close-circle-button {
+  margin-left: -25px;
+  margin-right: 10px;
+}
+
+.text-small {
+  font-size: 15px;
+}
+
+.btn-search-discount {
+  border-radius: 5px !important;
+  color: $white;
+  font-family: Khand;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 3px 15px;
+  width: 16.5%;
+}
+
+.btn-search-discount:hover {
+  color: $white;
+}
+
+.half-view {
+  height: 150px;
+}
+
+.generate-code {
+  margin: 5px;
+
+  td,
+  th {
+    padding: 0 5px;
+  }
+}
+
+.btn-generate {
+  border-radius: 5px;
+  color: $white;
+  font-family: Khand;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 15px 10px;
+  width: 100%;
+}
+
+.btn-generate:hover {
+  color: $white;
+}
+
+.btn-shadow {
+  background: $gradient;
+  box-shadow: 3px 3px 20px 1px $gray-light;
+}
+
+.btn-shadow:hover {
+  box-shadow: 3px 3px 10px 2px $gray-light;
+}
+
+.modal-form {
+  font-family: Khand;
+  font-size: 1.5em;
+  padding: 20px;
+
+}
+
+.btn-save-modal {
+  font-size: 2em;
+  margin: 15px 10px 0 0;
+  padding: 10px 80px;
+  width: 100%;
+}
+
+.select-full-width {
+  width: 100%;
+}
+
+.form-control-discount {
+  display: inline;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.pagination,
+.pagination-count {
+  font-family: Khand;
+  margin: 0 10px;
+}
+
+.table-discount-code {
+  margin: 20px 0;
+}
+
+.quantity-in-discount {
+  width: 100%;
+}
+
+.code-status-col {
+  width: 30%;
+}

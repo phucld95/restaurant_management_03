@@ -8,9 +8,9 @@ class Admin::OrderDishesController < ApplicationController
 
   def new
     @order_dish = OrderDish.new
-    respond_to do |format|
-      format.html{render "_order_dish_item", layout: false,
-        locals: {support: @support}}
+    link = "_order_dish_item"
+    respond_to do |f|
+      f.html{render link, layout: false, locals: {support: @support}}
     end
   end
 

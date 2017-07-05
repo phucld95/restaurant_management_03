@@ -8,9 +8,9 @@ class Admin::OrderCombosController < ApplicationController
 
   def new
     @order_combo = OrderCombo.new
+    link = "_order_combo_item"
     respond_to do |format|
-      format.html{render "_order_combo_item", layout: false,
-        locals: {support: @support}}
+      format.html{render link, layout: false, locals: {support: @support}}
     end
   end
 

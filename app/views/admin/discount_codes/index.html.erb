@@ -1,0 +1,84 @@
+<section class="discount-screen">
+  <div class="container">
+    <div class="row">
+      <div class="view-part col-sm-7">
+        <br>
+        <div class="row">
+          <h3 class="col-sm-3"><%= t "discount.all" %></h3>
+          <div class="col-sm-9 text-small">
+            <%= search_form_for @support.search, url: admin_discount_codes_path,
+              remote: true do |f| %>
+              <div class="dp-inline">
+                <%= f.text_field :code_cont,
+                  class: "search-discount dp-inline",
+                  placeholder: t("discount.input"), id: "searchinput" %>
+                <span id="searchclear" class="glyphicon
+                  glyphicon-remove-circle dp-inline close-circle-button"></span>
+                <span class="input-group-btn dp-inline">
+                  <%= f.submit t("admin.search"), class: "btn btn-add-dish
+                    btn-search-discount btn-shadow" %>
+                </span>
+                <%= f.number_field :discount_eq, class: "pj-form-field w150",
+                  placeholder: "Discount", min: 1 %>
+                <%= f.select :status_cont,
+                  [t("select.available"), t("select.used")],
+                  {include_blank: t(".choose_status"),
+                  selected: params[:q] ? params[:q][:status_cont] : ''},
+                  class: "btn btn-default" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%= render "item_discount_code", support: @support %>
+        <div id="discount-pagination" class="apple-pagination">
+          <%= paginate @support.discounts_search, remote: true %>
+        </div>
+        <div id="counter" class="pagination-count text-center counter">
+          <%= page_entries_info @support.discounts_search, remote: true %>
+        </div>
+      </div>
+      <div class="view-part col-sm-4 half-view">
+        <br>
+        <h3 class="col-sm-12"><%= t "discount.generate" %></h3>
+        <div class="row">
+          <table class="generate-code dp-inline">
+            <thead>
+              <th><%= t ".discount" %></th>
+              <th><%= t ".quantity" %></th>
+              <th colspan="4" class="code-status-col">
+                <%= t ".code_status" %>
+              </th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= number_field_tag "new_code_discount", 0,
+                    {class: "quantity-in-discount", min: 0, include_blank: 0} %>
+                </td>
+                <td>
+                  <%= number_field_tag "new_code_quantity", 0,
+                    {class: "quantity-in-discount", min: 0, include_blank: 0} %>
+                </td>
+                <td colspan="4">
+                  <%= select_tag "new_code_status", options_for_select([
+                    t("select.available"), t("select.used")]),
+                    {class: "quantity-in-discount"} %>
+                </td>
+                <td>
+                  <div class="dp-inline btn btn-add-dish btn-generate btn-shadow"
+                       id="btn-generate-code">
+                    <%= t ".generate" %>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="generated-code">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

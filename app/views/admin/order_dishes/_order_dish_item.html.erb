@@ -2,7 +2,7 @@
   <td class="total">
     <strong>
      <%= select_tag "new_order_dish",
-        options_for_select(support.load_data[:dish_select]),
+        options_for_select(support.load_data[:dish]),
         {class: "select-in-order", include_blank: t("order_detail.new_dish")} %>
     </strong>
   </td>

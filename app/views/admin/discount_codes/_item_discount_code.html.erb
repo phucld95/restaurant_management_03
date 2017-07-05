@@ -1,0 +1,53 @@
+<div id="table-discount-code">
+  <table class="default-dg-table table-discount-code">
+    <tbody>
+    <tr class="dg_tr" id="di_row_">
+      <th class="default_dg_th dg-left dg-nowrap dg1">
+        <%= sort_link support.search, :id, t(".order"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="default_dg_th dg-center dg-nowrap dg2">
+        <%= sort_link support.search, :code, t(".code"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="default_dg_th dg-center dg-nowrap dg3">
+        <%= sort_link support.search, :discount, t(".discount"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="default_dg_th dg-center dg-nowrap dg3">
+        <%= sort_link support.search, :status, t(".status"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="default_dg_th dg-center dg-nowrap dg4" colspan="2">
+        <%= t ".option" %>
+      </th>
+    </tr>
+    <%= render "modal_edit" %>
+    <% if support.discounts_search.any? %>
+      <% support.discounts_search.each do |discount| %>
+        <tr class="dg_tr" id="di_row_0">
+          <td class="default_dg_td dg-left dg-nowrap dg1">
+            <%= discount.id %>
+          </td>
+          <td class="default_dg_td dg-center dg-nowrap dg2
+            discount-code<%= discount.id %>"><%= discount.code %></td>
+          <td class="default_dg_td dg-center dg-nowrap dg3
+            discount<%= discount.id %>"><%= discount.discount %></td>
+          <td class="default_dg_td dg-center dg-nowrap dg3
+            discount-status<%= discount.id %>"><%= discount.status %></td>
+          <td class="default_dg_td dg-right dg-nowrap">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"
+                id="btn-edit-discount" data="<%= discount.id %>"></i>
+          </td>
+          <td class="default_dg_td dg-left dg-nowrap img">
+            <%= link_to admin_discount_code_path(discount), method: :delete,
+              data: {confirm: t("button.delete_warning")} do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
