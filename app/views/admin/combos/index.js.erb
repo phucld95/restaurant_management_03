@@ -1,3 +1,4 @@
-$('#admin-combos').html('<%= j render "combo", search: @search, combos: @combos %>');
+$('#admin-combos').html('<%= j render "combo", combos: @combos,
+  categories: @categories %>');
 $('#admin-combos-pagination')
-    .html('<%= j paginate(@combos.combos_search, remote: true).to_s %>');
+  .html('<%= j paginate(@combos.combos_search, remote: true).to_s %>');
