@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170623065341) do
   create_table "discount_codes", force: :cascade do |t|
     t.string   "code"
     t.integer  "discount"
-    t.integer  "status"
+    t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,8 +81,9 @@ ActiveRecord::Schema.define(version: 20170623065341) do
     t.integer  "quantity"
     t.integer  "price"
     t.integer  "total_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "order_dishes", force: :cascade do |t|
@@ -92,8 +93,9 @@ ActiveRecord::Schema.define(version: 20170623065341) do
     t.integer  "quantity"
     t.integer  "price"
     t.integer  "total_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "orders", force: :cascade do |t|
