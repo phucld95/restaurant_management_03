@@ -6,9 +6,9 @@
       <%= sort_link dishes_support.search, :name, {}, {remote: true, method: :get} %>
       <%= sort_link dishes_support.search, :price, {}, {remote: true, method: :get} %>
       &nbsp;&nbsp;&nbsp;&nbsp;<%= t ".check" %>
-      <%= f.select :isAvailable_true, [[t(".available"), 1]],
+      <%= f.select :is_available_true, [[t(".available"), 1]],
         {include_blank: t(".all"),
-        selected: params[:q] ? params[:q][:isAvailable_true] : ''},
+        selected: params[:q] ? params[:q][:is_available_true] : ''},
         class: "btn btn-default" %>
       <div class="input-group input-group-lg">
         <div class="form-group has-feedback has-clear input-group-lg">

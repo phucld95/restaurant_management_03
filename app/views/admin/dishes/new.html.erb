@@ -1,0 +1,11 @@
+<section class="section admin-site">
+  <br><br>
+  <div class="col-sm-12 col-md-offset-1 col-md-10">
+    <h1><%= t ".title" %></h1><br>
+    <div class="bloc col-xs-12">
+      <div class="form-dish admin-form-dish">
+        <%= render "form", dish: @dish, categories: @categories %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+<%= search_form_for [:admin, dishes_support.search], remote: true,
+  method: :get do |f| %>
+  <div class="col-sm-12">
+    <div class="form-group has-feedback has-clear input-group-lg
+      col-sm-7 col-xs-12">
+      <%= f.text_field :name_or_description_cont, class: "form-control",
+        placeholder: t(".input_keyword"), id: "searchinput" %>
+    </div>
+    <div class="col-sm-3 col-xs-6 status">
+      <%= t ".status" %>
+      <%= f.select :is_available_true, [[t(".yes"), 1], [t(".no"), 0]],
+        {include_blank: t(".all"),
+        selected: params[:q] ? params[:q][:is_available_true] : ''},
+        class: "btn btn-default" %>
+    </div>
+    <div class="col-sm-1 col-xs-4 search-button">
+      <%= f.submit  t(".search"), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="apple-pagination">
+    <%= paginate dishes_support.dishes_search, remote: true %>
+  </div>
+  <table class="default-dg-table admin-dish-table">
+    <thead>
+      <tr id="di_row_">
+        <th class="default_dg_th dg-center dg-nowrap">
+          <%= sort_link dishes_support.search, :id, t(".order"),{},
+            {remote: true, method: :get} %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap" colspan="2">
+          <%= sort_link dishes_support.search, :name, {},
+            {remote: true, method: :get} %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap">
+          <%= sort_link dishes_support.search, :price, {},
+            {remote: true, method: :get} %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap">
+          <%= t ".status" %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap" colspan="2">
+          <%= t ".opition" %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if dishes_support.dishes_search.any? %>
+        <% dishes_support.dishes_search.each do |dish| %>
+          <tr class="dg_tr" id="di_row_0">
+            <td class="default_dg_td dg-center dg-nowrap"><%= dish.id %></td>
+            <td class="default_dg_td dg-left dg-nowrap img">
+              <%= image_tag dish.image,
+                onerror: "this.src='https://getawayoutdoors.com.au/UploadFiles/noimage.jpg';" %>
+            </td>
+            <td class="default_dg_td dg-left dg-nowrap">
+              <%= link_to dish.name, admin_dish_path(dish) %>
+            </td>
+            <td class="default_dg_td dg-center dg-nowrap">
+              $<%= dish.price %>
+            </td>
+            <td class="default_dg_td dg-center dg-nowrap">
+              <% if dish.is_available? %>
+                <span class="badge-green"><%= t ".yes" %></span>
+              <% else %>
+                <span class="badge-red"><%= t ".no" %></span>
+              <% end %>
+            </td>
+            <td class="default_dg_td dg-right dg-nowrap">
+              <%= link_to edit_admin_dish_path(dish) do %>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <% end %>
+            </td>
+            <td class="default_dg_td dg-left dg-nowrap">
+              <%= link_to admin_dish_path(dish),
+                method: :delete, data: {confirm: t("button.delete_warning")} do %>
+                <i class="fa fa-times" aria-hidden="true"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
