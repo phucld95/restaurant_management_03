@@ -19,26 +19,29 @@
     <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= javascript_include_tag "application", "data-turbolinks-track": "true" %>
   </head>
-  <div class="navbar navbar-default navbar-static-top fadeInDownBig" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon icon-bar"></span>
-          <span class="icon icon-bar"></span>
-          <span class="icon icon-bar"></span>
-        </button>
-        <%= link_to t("brand"), root_path , id: "brand", class: "navbar-brand faded", method: :get %>
-      </div>
-      <div class="collapse navbar-collapse">
-        <% if logged_in? %>
-          <%= render "layouts/menu_admin" %>
-        <% else %>
-          <%= render "layouts/menu_guest" %>
-        <% end %>
+  <body>
+    <div class="navbar navbar-default navbar-static-top fadeInDownBig"
+      role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-collapse">
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+          </button>
+          <%= link_to t("brand"), root_path , id: "brand",
+            class: "navbar-brand faded", method: :get %>
+        </div>
+        <div class="collapse navbar-collapse">
+          <% if logged_in? %>
+            <%= render "layouts/menu_admin" %>
+          <% else %>
+            <%= render "layouts/menu_guest" %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <body>
     <%= render "shared/flash" %>
     <%= yield %>
     <section>
