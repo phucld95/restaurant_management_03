@@ -12,20 +12,21 @@
         id:"capacity_field", required: true,
         placeholder: t("reserve.quantity") %>
     </div>
-    <div class="col-sm-4">
-      <%= f.label :orders_day_eq, t("admin.orders.form.pickdate"), class: "form-label" %>
-      <%= f.text_field :orders_day_not_eq, class: "form-control datepicker2",
-        placeholder: t("reserve.date"), id:"date_field", required: true %>
+    <div class="row row-form">
+      <div class="col-sm-6">
+        <%= f.label :orders_day_eq, t("admin.orders.form.pickdate"), class: "form-label" %>
+        <%= f.text_field :orders_day_not_eq, class: "form-control datepicker2",
+          placeholder: t("reserve.date"), id:"date_field", required: true %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.label :orders_time_in_eq, t("admin.orders.form.time"),
+          class: "form-label" %>
+        <%= f.text_field :orders_day_not_eq, class: "form-control form-control2
+          timepicker", placeholder: t("reserve.date"),
+          id:"timepicker", required: true %>
+      </div>
     </div>
-    <div class="col-sm-8">
-      <%= f.label :orders_time_in_eq, t("admin.orders.form.time"),class: "form-label" %>
-      <%= f.select :orders_time_in_not_eq, [[t("select.em"), 1], [t("select.lm"), 2],
-        [t("select.ea"), 3], [t("select.la"), 4],
-        [t("select.ee"), 5], [t("select.le"), 6]],
-        {include_blank: t("reserve.time")}, id:"time_field",
-        class: "form-control", required: true %>
-    </div>
-    <div class="col-sm-12  mg-center">
+    <div class="col-sm-12 mg-center">
       <hr>
       <input type="button" name="next" data-next="1" data-current="0"
         class="next action-button" value="Next" step="1"/>
