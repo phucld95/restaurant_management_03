@@ -30,9 +30,17 @@ class Admin::OrderCombosController < ApplicationController
   end
 
   def update
-    if @order_combo.update_attributes order_combo_params
+    params_update = order_combo_params
+    if @order_combo.update_attributes params_update
       flash[:success] = t "admin_order.success_update"
       redirect_to admin_order_path @support.load_data[:order]
+      if params_update[:status] != 0
+        ActionCable.server.broadcast "messages",
+          from_role: current_admin.admin_role,
+          combo: @order_combo.combo.name,
+          table: @order_combo.order.table.code
+        head :ok
+      end
     else
       flash[:danger] = t "admin_order.something_wrong"
       redirect_to edit_admin_order_order_combo_path
@@ -54,6 +62,6 @@ class Admin::OrderCombosController < ApplicationController
 
   private
   def order_combo_params
-    params.require(:order_combo).permit :combo_id, :quantity
+    params.require(:order_combo).permit :combo_id, :quantity, :status
   end
 end

@@ -7,6 +7,7 @@ class CreateOrderCombos < ActiveRecord::Migration[5.0]
       t.integer :quantity
       t.integer :price
       t.integer :total_price
+      t.integer :status, default: 0
 
       t.timestamps
     end

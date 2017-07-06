@@ -29,9 +29,17 @@ class Admin::OrderDishesController < ApplicationController
   end
 
   def update
-    if @order_dish.update_attributes order_dish_params
+    params_update = order_dish_params
+    if @order_dish.update_attributes params_update
       flash[:success] = t "admin_order.success_update"
       redirect_to admin_order_path @support.load_data[:order]
+      if params_update[:status] != 0
+        ActionCable.server.broadcast "messages",
+          from_role: current_admin.admin_role,
+          combo: @order_dish.combo.name,
+          table: @order_dish.order.table.code
+        head :ok
+      end
     else
       redirect_to edit_admin_order_order_dish_path
     end
@@ -52,6 +60,6 @@ class Admin::OrderDishesController < ApplicationController
 
   private
   def order_dish_params
-    params.require(:order_dish).permit :dish_id, :order_id, :quantity
+    params.require(:order_dish).permit :dish_id, :order_id, :quantity, :status
   end
 end

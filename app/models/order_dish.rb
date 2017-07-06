@@ -1,4 +1,6 @@
 class OrderDish < ApplicationRecord
+  enum status: [:no_need, :needing, :cooking, :cooked, :served, :cancel]
+
   belongs_to :order
   belongs_to :dish
 

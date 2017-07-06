@@ -22,6 +22,7 @@ gem "will_paginate"
 gem "owlcarousel-rails"
 gem "font-awesome-sass"
 gem "cancancan"
+gem "redis"
 
 group :development, :test do
   gem "byebug", platform: :mri
